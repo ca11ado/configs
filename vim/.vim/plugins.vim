@@ -11,4 +11,5 @@ Plug 'junegunn/vim-easy-align'
 "Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
 Plug 'mhinz/vim-signify'
 Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
 Plug 'scrooloose/syntastic'
