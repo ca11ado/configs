@@ -5,6 +5,7 @@
   ui = true
 [core]
   autocrlf = input
+	editor = /usr/bin/vim
 [alias]
   s = status
   b = branch
@@ -19,9 +20,12 @@
   llg = log --color --graph --pretty=format:'%C(bold white)%H %d%Creset%n%s%n%+b%C(bold blue)%an <%ae>%Creset %C(bold green)%cr (%ci)' --abbrev-commit
   master = checkout master
   f = fetch
+	df = !vim -p `git diff --name-only` -p `git diff --names-only`
 [diff]
-  tool = vimdiff
+	tool = vimdiff
 [diff "tool"]
   prompt = false
 [push]
   default = simple
+[merge]
+	tool = vimdiff
