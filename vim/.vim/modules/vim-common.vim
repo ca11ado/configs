@@ -3,6 +3,7 @@ set number
 set tabstop=2
 set shiftwidth=2
 set expandtab "use spaces instead of tabs"
+set splitright
 
 "set current directory for opened buffer
 "set autochdir
