@@ -1,0 +1,10 @@
+#!/bin/sh
+
+branch=$(git symbolic-ref --short HEAD)
+if [ -n "$branch" ] && [ "$branch" != "master" ]; then
+  trimmed=$(echo $branch | sed -ne 's:^\(FEATURE-.*\):\1:p')
+  amend=$(cat "$1" | sed -ne 's:^\([FEATURE]-*\):\1:p')
+  if [ -n "$trimmed" ] && [ -z "$amend" ]; then
+    sed -i.bak -e "1s:^:$trimmed - :" $1
+  fi
+fi
