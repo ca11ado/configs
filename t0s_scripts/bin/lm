@@ -1,6 +1,9 @@
 #!/bin/bash
 
 if [ $# -gt 0 ]; then
+  if [ "$1" == "-help" ]; then
+    echo '-site ru; -req;'
+  fi
   if [ "$1" == "-site" ]; then
     if [ "$2" == "ru" ]; then
       ~/Projects/Lamoda/Frontend/manage.py runserver --settings=frontend_xslt.settings.ru
