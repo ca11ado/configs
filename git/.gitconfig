@@ -21,6 +21,7 @@
   master = checkout master
   f = fetch
 	df = !vim -p `git diff --name-only` -p `git diff --names-only`
+  sub = submodule update
 [diff]
 	tool = vimdiff
 [diff "tool"]
