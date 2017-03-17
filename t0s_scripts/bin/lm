@@ -22,6 +22,11 @@ if [ $# -gt 0 ]; then
     cd ~/Projects/Lamoda/Frontend/
     pip install -r requirements.dev.txt
   fi
+  if [ "$1" == "-update" ]; then
+    if [ "$2" == "configs" ]; then
+      update-configs
+    fi
+  fi
 else
     echo "No parameters"
 fi

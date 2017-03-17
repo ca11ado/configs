@@ -1,0 +1,13 @@
+#!/bin/bash
+
+echo 'I will copy your scripts'
+site_path=~/Projects/Lamoda/Frontend/etc
+configs_path=/etc/lamoda
+
+echo "I will use those paths $site_path and $configs_path"
+
+sudo cp "$site_path/apilib.ru.conf.proto" "$configs_apth/apilib.ru.conf" && echo 'success ru'
+sudo cp "$site_path/apilib.by.conf.proto" "$configs_apth/apilib.by.conf" && echo 'success by'
+sudo cp "$site_path/apilib.ua.conf.proto" "$configs_apth/apilib.ua.conf" && echo 'success ua'
+sudo cp "$site_path/apilib.kz.conf.proto" "$configs_apth/apilib.kz.conf" && echo 'success kz'
+echo You should restart your site instance
