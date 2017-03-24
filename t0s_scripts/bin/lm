@@ -17,6 +17,9 @@ if [ $# -gt 0 ]; then
     if [ "$2" == "by" ]; then
       ~/Projects/Lamoda/Frontend/manage.py runserver --settings=frontend_xslt.settings.by 8003
     fi
+    if [ "$2" == "fifa" ]; then
+      ~/Projects/Lamoda/Frontend/manage.py runserver --settings=frontend_xslt.settings.fifa 8009
+    fi
   fi
   if [ "$1" == "-req" ]; then
     cd ~/Projects/Lamoda/Frontend/
