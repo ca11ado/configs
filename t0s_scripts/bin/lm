@@ -1,28 +1,33 @@
 #!/bin/bash
 
+lamoda_home=~/Projects/Lamoda/Frontend
+
 if [ $# -gt 0 ]; then
   if [ "$1" == "-help" ]; then
     echo '-site ru; -req;'
   fi
+  if [ "$1" == "-home" ]; then
+    echo $lamoda_home
+  fi
   if [ "$1" == "-site" ]; then
     if [ "$2" == "ru" ]; then
-      ~/Projects/Lamoda/Frontend/manage.py runserver --settings=frontend_xslt.settings.ru
+      $lamoda_home/manage.py runserver --settings=frontend_xslt.settings.ru
     fi
     if [ "$2" == "ua" ]; then
-      ~/Projects/Lamoda/Frontend/manage.py runserver --settings=frontend_xslt.settings.ua 8001
+      $lamoda_home/manage.py runserver --settings=frontend_xslt.settings.ua 8001
     fi
     if [ "$2" == "kz" ]; then
-      ~/Projects/Lamoda/Frontend/manage.py runserver --settings=frontend_xslt.settings.kz 8002
+      $lamoda_home/manage.py runserver --settings=frontend_xslt.settings.kz 8002
     fi
     if [ "$2" == "by" ]; then
-      ~/Projects/Lamoda/Frontend/manage.py runserver --settings=frontend_xslt.settings.by 8003
+      $lamoda_home/manage.py runserver --settings=frontend_xslt.settings.by 8003
     fi
     if [ "$2" == "fifa" ]; then
-      ~/Projects/Lamoda/Frontend/manage.py runserver --settings=frontend_xslt.settings.fifa 8009
+      $lamoda_home/manage.py runserver --settings=frontend_xslt.settings.fifa 8009
     fi
   fi
   if [ "$1" == "-req" ]; then
-    cd ~/Projects/Lamoda/Frontend/
+    cd $lamoda_home/
     pip install -r requirements.dev.txt
   fi
   if [ "$1" == "-update" ]; then
