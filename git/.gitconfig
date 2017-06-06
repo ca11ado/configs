@@ -22,6 +22,7 @@
   f = fetch
 	df = !vim -p `git diff --name-only` -p `git diff --names-only`
   sub = submodule update
+  pushu = push -u origin HEAD
 [diff]
 	tool = vimdiff
 [diff "tool"]
