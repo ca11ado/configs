@@ -24,6 +24,7 @@
   sub = submodule update
   pushu = push -u origin HEAD
   lo = log --oneline
+  lm = !echo '>>> diff with master' && git log master..HEAD --oneline
 [diff]
 	tool = vimdiff
 [diff "tool"]
