@@ -18,7 +18,7 @@ function lm
         case by
           ./manage.py runserver --settings=frontend_xslt.settings.by 8003
         case fifa
-          ./manage.py runserver --settings=frontend_xslt.settings.fifa 8004
+          ./manage.py runserver --settings=frontend_xslt.settings.fifa 8009
         case '*'
           echo unknown site
       end
