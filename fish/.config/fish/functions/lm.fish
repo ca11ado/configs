@@ -2,6 +2,9 @@ function lm
   set -l lamoda_home ~/Projects/Lamoda/Frontend
 
   switch $argv[1]
+    case -help
+      echo -site -- run site instance
+      echo -configs -- update site configs
     case -site
       pushd $lamoda_home
 
@@ -21,5 +24,25 @@ function lm
       end
 
       popd
+  case -configs
+    update_configs    
+  case '*'
+    echo unknown argument
   end
+end
+
+
+function update_configs
+  set c_date (date "+%d.%m.%y_%H:%M:%S")
+  set sites ru by kz ua
+
+  mkdir $HOME/Projects/Lamoda/savedFiles/$c_date
+  for val in $sites
+    cp $HOME/Projects/Lamoda/Frontend/etc/apilib.$val.conf.proto /etc/lamoda/apilib.$val.conf
+  end
+
+  #fifa
+  cp $HOME/Projects/Lamoda/Frontend/etc/apilib.ru.conf.proto /etc/lamoda/apilib.fifa.conf
+
+  echo bakup directory: $HOME/Projects/Lamoda/savedFiles/$c_date
 end
