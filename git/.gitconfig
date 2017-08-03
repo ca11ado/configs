@@ -18,7 +18,7 @@
   d = difftool
   acm = !git add . && git commit -m
   llg = log --color --graph --pretty=format:'%C(bold white)%H %d%Creset%n%s%n%+b%C(bold blue)%an <%ae>%Creset %C(bold green)%cr (%ci)' --abbrev-commit
-  master = !git checkout master && git pull
+  master = !git checkout master && git pull --rebase origin master
   f = fetch
 	df = !vim -p `git diff --name-only` -p `git diff --names-only`
   sub = submodule update
