@@ -1,0 +1,29 @@
+#!/bin/bash
+
+hosts_path=/var/www/nodeStatic/
+
+if [ $# -gt 0 ]; then
+  if [ "$1" == "-help" ]; then
+    echo 'управление серверами с нодой'
+  fi
+  if [ "$1" == "-list" ]; then
+    echo "$(ps ax | grep node)"
+  fi
+  if [ "$1" == "-inache" ]; then
+    pid="$(ps ax | grep node | grep nodeServer | awk '{ print $1 }')"
+    if [ -n "$pid" ]; then
+      echo exists
+      #kill $pid
+    else
+      echo not exits
+      nohup node $hosts_path/inache/nodeServer.js &
+    fi
+  fi
+  #if [ "$1" == "-update" ]; then
+  #  if [ "$2" == "configs" ]; then
+  #    update-configs
+  #  fi
+  #fi
+else
+    echo "No parameters"
+fi
