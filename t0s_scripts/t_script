@@ -9,14 +9,25 @@ if [ $# -gt 0 ]; then
   if [ "$1" == "-list" ]; then
     echo "$(ps ax | grep node)"
   fi
-  if [ "$1" == "-inache" ]; then
+  if [ "$1" == "inache" ]; then
     pid="$(ps ax | grep node | grep nodeServer | awk '{ print $1 }')"
-    if [ -n "$pid" ]; then
-      echo exists
-      #kill $pid
-    else
-      echo not exits
-      nohup node $hosts_path/inache/nodeServer.js &
+    if [ "$2" == "-start" ]; then
+      if [ -n "$pid" ]; then
+        echo this server already exists
+        #kill $pid
+      else
+        echo starting node server
+        nohup node $hosts_path/inache/nodeServer.js &
+        echo server running
+      fi
+    fi
+    if [ "$2" == "-stop" ]; then
+      if [ -n "$pid" ]; then
+        echo this server exists -- kill him 
+        kill $pid
+      else
+        echo this server does not exists
+      fi
     fi
   fi
   #if [ "$1" == "-update" ]; then
