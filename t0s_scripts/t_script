@@ -18,7 +18,8 @@ if [ $# -gt 0 ]; then
       #if [ "$#pid" -gt 0 ]; then
       if ! [[ $pid =~ $re ]] ; then
         echo starting node server
-        nohup node $hosts_path/inache/serverNode.js &
+        cd $hosts_path/inache
+        nohup node ./serverNode.js &
         echo server running
       else
         echo this server already exists
