@@ -23,7 +23,7 @@ if [ $# -gt 0 ]; then
       $lamoda_home/manage.py runserver --settings=frontend_xslt.settings.by 8003
     fi
     if [ "$2" == "fifa" ]; then
-      $lamoda_home/manage.py runserver --settings=frontend_xslt.settings.fifa 8009
+      $lamoda_home/manage.py runserver --settings=frontend_xslt.settings.fifa 8004
     fi
   fi
   if [ "$1" == "-req" ]; then
