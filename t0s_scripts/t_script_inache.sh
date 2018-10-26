@@ -67,7 +67,7 @@ if [ $# -gt 0 ]; then
     fi
     if [ "$2" == "-status" ]; then
       re='^[0-9]+$'
-      SERVER_PID=$(get_server_pid ${PROJECT_DIR}/${NODE_SERVER_NAME})
+      SERVER_PID=$(get_server_pid ${PROJECT_DIR}/${NODE_SERVER_NAME_INACHE})
       if [[ $SERVER_PID =~ [[:digit:]] ]]; then
         echo "server pid: ${SERVER_PID}"
       else

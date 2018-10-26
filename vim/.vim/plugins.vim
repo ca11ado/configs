@@ -16,3 +16,4 @@ Plug 'scrooloose/syntastic'
 " Search in VIM
 Plug 'mileszs/ack.vim'
 Plug 'fleischie/vim-styled-components'
+Plug 'posva/vim-vue'
