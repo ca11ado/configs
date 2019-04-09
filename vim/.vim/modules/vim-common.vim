@@ -5,6 +5,16 @@ set shiftwidth=2
 set expandtab "use spaces instead of tabs"
 set splitright
 
+"netrw
+let g:netrw_liststyle = 3
+let g:netrw_banner = 0
+
+"COLORS
+"colorscheme Atom
+"colorscheme nord
+colorscheme iceberg
+"colorscheme 256_noir
+
 "SEARCH"
 set hlsearch "highlight search occurrence"
 set ignorecase "ignore words case in search"
