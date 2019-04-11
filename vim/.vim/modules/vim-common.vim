@@ -10,10 +10,7 @@ let g:netrw_liststyle = 3
 let g:netrw_banner = 0
 
 "COLORS
-"colorscheme Atom
-"colorscheme nord
-colorscheme iceberg
-"colorscheme 256_noir
+source ~/.vim/modules/vim-set-color.vim
 
 "SEARCH"
 set hlsearch "highlight search occurrence"
@@ -37,3 +34,7 @@ map <leader>es :sp <C-R>=expand("%:p:h") . "/" <CR>
 map <leader>ev :vsp <C-R>=expand("%:p:h") . "/" <CR>
 map <leader>et :tabe <C-R>=expand("%:p:h") . "/" <CR>
 
+map <C-l> <C-W><Right>
+map <C-h> <C-W><Left>
+map <C-k> <C-W><Up>
+map <C-j> <C-W><Down>
