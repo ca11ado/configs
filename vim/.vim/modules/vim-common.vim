@@ -38,3 +38,6 @@ map <C-l> <C-W><Right>
 map <C-h> <C-W><Left>
 map <C-k> <C-W><Up>
 map <C-j> <C-W><Down>
+
+map ,c :%w !pbcopy<cr>
+map ,b :!browser-sync start --no-notify --no-ui --server --files % > /dev/null 2>&1 &<CR>
