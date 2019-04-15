@@ -5,12 +5,22 @@ set shiftwidth=2
 set expandtab "use spaces instead of tabs"
 set splitright
 
+"sessions
+let g:sessions_dir = '~/.vim/sessions'
+
+"completion for the vim command line by <Tab>
+set wildmenu 
+set wildmode=longest:full,full
+
 "netrw
 let g:netrw_liststyle = 3
 let g:netrw_banner = 0
 
 "COLORS
 source ~/.vim/modules/vim-set-color.vim
+
+"ESLINT
+source ~/.vim/modules/vim-syntastic.vim
 
 "SEARCH"
 set hlsearch "highlight search occurrence"
@@ -41,3 +51,9 @@ map <C-j> <C-W><Down>
 
 map ,c :%w !pbcopy<cr>
 map ,b :!browser-sync start --no-notify --no-ui --server --files % > /dev/null 2>&1 &<CR>
+map ,z <C-z>
+map ,l :!clear; and eslint %<CR>
+
+"sessions
+exec 'nnoremap <Leader>ss :mks! ' . g:sessions_dir . '/*.vim<C-D><BS><BS><BS><BS><BS>'
+exec 'nnoremap <Leader>sr :so ' . g:sessions_dir. '/*.vim<C-D><BS><BS><BS><BS><BS>'
