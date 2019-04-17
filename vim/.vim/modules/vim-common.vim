@@ -1,12 +1,8 @@
-imap jk <Esc> 
 set number
 set tabstop=2
 set shiftwidth=2
 set expandtab "use spaces instead of tabs"
 set splitright
-
-"sessions
-let g:sessions_dir = '~/.vim/sessions'
 
 "completion for the vim command line by <Tab>
 set wildmenu 
@@ -20,7 +16,7 @@ let g:netrw_banner = 0
 source ~/.vim/modules/vim-set-color.vim
 
 "ESLINT
-source ~/.vim/modules/vim-syntastic.vim
+"source ~/.vim/modules/vim-syntastic.vim
 
 "SEARCH"
 set hlsearch "highlight search occurrence"
@@ -37,8 +33,9 @@ set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 "set file status
 set laststatus=2
 
-"MAPPGINS
+"MAPPINGS
 let mapleader=','
+imap jk <Esc>
 map <leader>ew :e <C-R>=expand("%:p:h") . "/" <CR>
 map <leader>es :sp <C-R>=expand("%:p:h") . "/" <CR>
 map <leader>ev :vsp <C-R>=expand("%:p:h") . "/" <CR>
@@ -55,5 +52,6 @@ map ,z <C-z>
 map ,l :!clear; and eslint %<CR>
 
 "sessions
+let g:sessions_dir = '~/.vim/sessions'
 exec 'nnoremap <Leader>ss :mks! ' . g:sessions_dir . '/*.vim<C-D><BS><BS><BS><BS><BS>'
 exec 'nnoremap <Leader>sr :so ' . g:sessions_dir. '/*.vim<C-D><BS><BS><BS><BS><BS>'
