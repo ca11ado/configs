@@ -3,6 +3,8 @@ set tabstop=2
 set shiftwidth=2
 set expandtab "use spaces instead of tabs"
 set splitright
+set wrap
+set so=999
 
 "completion for the vim command line by <Tab>
 set wildmenu 
