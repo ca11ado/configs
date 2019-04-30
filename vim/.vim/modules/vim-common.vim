@@ -53,6 +53,9 @@ map ,b :!browser-sync start --no-notify --no-ui --server --files % > /dev/null 2
 map ,z <C-z>
 map ,l :!clear; and eslint %<CR>
 
+map ,ff :CtrlPRoot<CR>
+map ,fn :Ack<SPACE>
+
 "sessions
 let g:sessions_dir = '~/.vim/sessions'
 exec 'nnoremap <Leader>ss :mks! ' . g:sessions_dir . '/*.vim<C-D><BS><BS><BS><BS><BS>'

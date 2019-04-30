@@ -6,7 +6,7 @@ Plug 'Lokaltog/vim-easymotion'
 Plug 'Raimondi/delimitMate'
 Plug 'Valloric/YouCompleteMe'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'helino/vim-json'
+"Plug 'helino/vim-json'
 Plug 'junegunn/vim-easy-align'
 "Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
 Plug 'mhinz/vim-signify'
