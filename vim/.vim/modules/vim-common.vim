@@ -56,6 +56,9 @@ map ,l :!clear; and eslint %<CR>
 map ,ff :CtrlPRoot<CR>
 map ,fn :Ack<SPACE>
 
+map ,spr :set spell spelllang=ru 
+map ,spe :set spell spelllang=en 
+
 "sessions
 let g:sessions_dir = '~/.vim/sessions'
 exec 'nnoremap <Leader>ss :mks! ' . g:sessions_dir . '/*.vim<C-D><BS><BS><BS><BS><BS>'
