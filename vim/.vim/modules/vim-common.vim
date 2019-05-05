@@ -6,6 +6,12 @@ set splitright
 set wrap
 set so=999
 
+"Автоматическое переключение на русскую расскладку
+"let g:XkbSwitchEnabled = 1
+"let g:XkbSwitchIMappings = ['ru']
+"let g:XkbSwitchLib = '/usr/local/lib/libxkbswitch.dylib'
+set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
+
 "completion for the vim command line by <Tab>
 set wildmenu 
 set wildmode=longest:full,full
@@ -38,6 +44,7 @@ set laststatus=2
 "MAPPINGS
 let mapleader=','
 imap jk <Esc>
+imap ол <Esc>
 map <leader>ew :e <C-R>=expand("%:p:h") . "/" <CR>
 map <leader>es :sp <C-R>=expand("%:p:h") . "/" <CR>
 map <leader>ev :vsp <C-R>=expand("%:p:h") . "/" <CR>
