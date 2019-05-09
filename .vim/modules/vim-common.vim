@@ -44,7 +44,6 @@ set laststatus=2
 "MAPPINGS
 let mapleader=','
 imap jk <Esc>
-imap ол <Esc>
 map <leader>ew :e <C-R>=expand("%:p:h") . "/" <CR>
 map <leader>es :sp <C-R>=expand("%:p:h") . "/" <CR>
 map <leader>ev :vsp <C-R>=expand("%:p:h") . "/" <CR>
