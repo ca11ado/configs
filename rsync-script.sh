@@ -3,7 +3,7 @@
 fish_dir=.config
 vim_dir=.vim
 
-echo -n "Copy from git repository to machine config (y/n)? "
+echo -n "Copy from REPO to MACHINE (y/n)? "
 read answer
 if [ "$answer" != "${answer#[Yy]}" ] ;then
   dest_path=$HOME

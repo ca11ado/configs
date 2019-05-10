@@ -1,11 +1,12 @@
 [user]
-  name = Химцов Антон Игоревич
-  email = a.khimtsov@2gis.ru
+  name = Khimtsov Anton Igorevich
+  email = projects.tlt@ya.ru
 [color]
   ui = true
 [core]
   autocrlf = input
 	editor = /usr/bin/vim
+	excludesfile = /home/anton/.gitignore_global
 [alias]
   s = status
   b = branch
@@ -18,9 +19,15 @@
   d = difftool
   acm = !git add . && git commit -m
   llg = log --color --graph --pretty=format:'%C(bold white)%H %d%Creset%n%s%n%+b%C(bold blue)%an <%ae>%Creset %C(bold green)%cr (%ci)' --abbrev-commit
-  master = checkout master
+  master = !git checkout master && git remote update origin && git reset --hard origin/master
   f = fetch
 	df = !vim -p `git diff --name-only` -p `git diff --names-only`
+  sub = submodule update
+  pushu = push -u origin HEAD
+  lo = log --oneline
+  lm = !echo '------------ COMMITS HEAD > MASTER' && git log origin/master..HEAD --oneline && echo '------------ COMMITS MASTER > HEAD' && git log HEAD..origin/master --oneline
+  lf = diff-tree --no-commit-id --name-only -r
+  st = !git for-each-ref --sort=taggerdate --format '%(refname) %(taggerdate)' refs/tags
 [diff]
 	tool = vimdiff
 [diff "tool"]
