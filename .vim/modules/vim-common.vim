@@ -70,6 +70,10 @@ map ,fn :Ack<SPACE>
 map ,spr :set spell spelllang=ru 
 map ,spe :set spell spelllang=en 
 
+"nerdtree
+map ,nv :NERDTreeVCS<CR>
+map ,nn :NERDTree<CR>
+
 "sessions
 let g:sessions_dir = '~/.vim/sessions'
 exec 'nnoremap <Leader>ss :mks! ' . g:sessions_dir . '/*.vim<C-D><BS><BS><BS><BS><BS>'
