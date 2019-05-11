@@ -1,7 +1,6 @@
 #!/bin/bash
 
 fish_dir=.config
-vim_dir=.vim
 
 echo -n "Copy from git repository to machine config (y/n)? "
 read answer
@@ -48,7 +47,23 @@ fi
 echo -n "Copy vim config (y/n)? "
 read answer
 if [ "$answer" != "${answer#[Yy]}" ] ;then
-  ARGS=("-avz" "--filter=:- .gitignore" "$source_path/$vim_dir" "$source_path/.vimrc" "$dest_path/")
+  source_vim_dir=$source_path/.vim
+  dest_vim_dir=$dest_path/.vim
+  if [ ! -d "$dest_vim_dir" ]; then
+    mkdir $dest_vim_dir
+  fi
+  cp $source_path/.vimrc $dest_path
+  ARGS=(
+    "-avz"
+    "--filter=:- .gitignore"
+    "$source_vim_dir/bootstrap.vim"
+    "$source_vim_dir/plugins.vim"
+    "$source_vim_dir/modules"
+    "$source_vim_dir/colors"
+    "$source_vim_dir/spell"
+    "$source_vim_dir/autoload"
+    "$dest_vim_dir"
+  )
   rsync "${ARGS[@]}"
 else
     echo skipped
