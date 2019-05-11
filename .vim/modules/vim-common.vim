@@ -4,7 +4,7 @@ set shiftwidth=2
 set expandtab "use spaces instead of tabs"
 set splitright
 set wrap
-set so=999
+"set so=999 "cursor always in the middle of the screen
 
 "Автоматическое переключение на русскую расскладку
 "let g:XkbSwitchEnabled = 1
@@ -15,6 +15,9 @@ set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNO
 "completion for the vim command line by <Tab>
 set wildmenu 
 set wildmode=longest:full,full
+
+"ctrlp plugin
+let g:ctrlp_custom_ignore = '\v[\/]node_modules$'
 
 "netrw
 let g:netrw_liststyle = 3
