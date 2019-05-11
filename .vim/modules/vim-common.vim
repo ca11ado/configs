@@ -10,7 +10,7 @@ set wrap
 "let g:XkbSwitchEnabled = 1
 "let g:XkbSwitchIMappings = ['ru']
 "let g:XkbSwitchLib = '/usr/local/lib/libxkbswitch.dylib'
-set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
+"set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
 
 "completion for the vim command line by <Tab>
 set wildmenu 
@@ -47,6 +47,8 @@ set laststatus=2
 "MAPPINGS
 let mapleader=','
 imap jk <Esc>
+noremap j gj
+noremap k gk
 map <leader>ew :e <C-R>=expand("%:p:h") . "/" <CR>
 map <leader>es :sp <C-R>=expand("%:p:h") . "/" <CR>
 map <leader>ev :vsp <C-R>=expand("%:p:h") . "/" <CR>
