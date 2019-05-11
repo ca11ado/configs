@@ -49,8 +49,12 @@ read answer
 if [ "$answer" != "${answer#[Yy]}" ] ;then
   source_vim_dir=$source_path/.vim
   dest_vim_dir=$dest_path/.vim
+  sessions_vim_dir=$dest_vim_dir/sessions
   if [ ! -d "$dest_vim_dir" ]; then
     mkdir $dest_vim_dir
+  fi
+  if [ ! -d "$sessions_vim_dir" ]; then
+    mkdir $sessions_vim_dir
   fi
   cp $source_path/.vimrc $dest_path
   ARGS=(
