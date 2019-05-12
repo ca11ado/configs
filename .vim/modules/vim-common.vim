@@ -49,31 +49,36 @@ let mapleader=','
 imap jk <Esc>
 noremap j gj
 noremap k gk
+map <leader>w :w<CR>
+map <leader>qq :q<CR>
+map <leader>qw :x<CR>
 map <leader>ew :e <C-R>=expand("%:p:h") . "/" <CR>
 map <leader>es :sp <C-R>=expand("%:p:h") . "/" <CR>
 map <leader>ev :vsp <C-R>=expand("%:p:h") . "/" <CR>
 map <leader>et :tabe <C-R>=expand("%:p:h") . "/" <CR>
+map <leader>ec :tab sp<CR>
 
 map <C-l> <C-W><Right>
 map <C-h> <C-W><Left>
 map <C-k> <C-W><Up>
 map <C-j> <C-W><Down>
 
-map ,c :%w !pbcopy<cr>
-map ,b :!browser-sync start --no-notify --no-ui --server --files % > /dev/null 2>&1 &<CR>
-map ,z <C-z>
-map ,l :!clear; and eslint %<CR>
+map <leader>c :%w !pbcopy<cr>
+map <leader>b :!browser-sync start --no-notify --no-ui --server --files % > /dev/null 2>&1 &<CR>
+map <leader>z <C-z>
+map <leader>l :!clear; and eslint %<CR>
 
-map ,ff :CtrlPRoot<CR>
-map ,fn :Ack<SPACE>
+map <leader>ff :CtrlPRoot<CR>
+map <leader>fn :Ack<SPACE>
 
-map ,spr :set spell spelllang=ru 
-map ,spe :set spell spelllang=en 
+map <leader>sps :set spell spelllang=ru,en
+map <leader>spr :set spell spelllang=ru 
+map <leader>spe :set spell spelllang=en 
 
 "nerdtree
-map ,nn :NERDTreeVCS<CR>
-map ,nd :NERDTree<CR>
-map ,nf :NERDTreeFind<CR>
+map <leader>nn :NERDTreeVCS<CR>
+map <leader>nd :NERDTree<CR>
+map <leader>nf :NERDTreeFind<CR>
 
 "sessions
 let g:sessions_dir = '~/.vim/sessions'
