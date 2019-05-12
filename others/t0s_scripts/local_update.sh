@@ -7,7 +7,8 @@
 
 DIR="`pwd`"
 SITE_URL="lamoda"
-REQ_FILE="requirements.dev.txt"
+REQ_FILE_DEFAULT="requirements.txt"
+REQ_FILE_DEV="requirements.dev.txt"
 APILIB_CONF_PROTO="etc/apilib.*.conf.proto"
 NGINX_CONF_PROTO="etc/nginx.conf.proto"
 
@@ -55,8 +56,7 @@ execute_and_check_result () {
     else
         error_msg "$2"
         echo_error "$3"
-        echo_info "Please, ask the Django team for help."
-        return 1
+        exit 1
     fi
 
 }
@@ -64,10 +64,16 @@ execute_and_check_result () {
 pip_install_requirements () {
     # Installs and upgrades packages.
 
+    if [ "$1" == "dev" ]; then
+        REQ_FILE=${REQ_FILE_DEV}
+    else
+        REQ_FILE=${REQ_FILE_DEFAULT}
+    fi
+
     if [ ! -f ${REQ_FILE} ]; then
         warn_msg "Requirements file doesn't exists: ${REQ_FILE}"
 
-        REQ_FILE=requirements.txt
+        REQ_FILE=${REQ_FILE_DEFAULT}
         echo "Checking the default one: ${REQ_FILE}"
 
         if [ ! -f ${REQ_FILE} ]; then
@@ -84,7 +90,7 @@ pip_install_requirements () {
     cd ${ENVS_DIR}
     virtualenv djangoenv
     cd ${DIR}
-    #source ${ENV_BIN_ACTIVATE}
+    source ${ENV_BIN_ACTIVATE}
     pip install -r ${REQ_FILE}
 }
 
@@ -179,7 +185,7 @@ update_nginx () {
     fi
 
     sudo pkill nginx
-    sudo nginx
+    execute_and_check_result "sudo nginx" \ "Starting nginx" \ "Could not start nginx"
 }
 
 update_submodules () {
@@ -218,10 +224,81 @@ run_servers () {
     done
 }
 
+run_local_server () {
+    countries=('ru' 'ua' 'kz' 'by')
+    ports=('8000' '8001' '8002' '8003')
+
+    for (( i = 0; i < ${#countries[@]}; ++i )); do
+        if [ "$1" == ${countries[$i]} ]; then
+            eval "source ${ENV_BIN_ACTIVATE} && ./manage.py runserver ${ports[$i]} --settings=frontend_xslt.settings.${countries[$i]} && deactivate"
+        fi
+    done
+}
+
+show_help_information () {
+    echo_info "Справочная информация"
+    ok_msg "Скрипт обновления локально ОСОБЫМ ОБРАЗОМ установленного проекта."
+    ok_msg "Если проект не установлен особым образом, следуйте инструкции:"
+    ok_msg "https://confluence.lamoda.ru/pages/viewpage.action?pageId=56733088"
+    echo ""
+    ok_msg "Обновить локальный сайт: ./local_update.sh"
+    ok_msg "Запуск всех стран в скрине: ./local_update.sh -s screen"
+    ok_msg "Запуск одной страны локально: ./local_update.sh -s ru"
+    ok_msg "Забрать dev requirements: ./local_update.sh -r dev"
+    ok_msg "Быстрое обновление без установки requirements: ./local_update.sh -f"
+}
+
+# check arguments
+POSITIONAL=()
+while [[ $# -gt 0 ]]
+do
+key="$1"
+
+case $key in
+    -r|--requirements)
+    REQUIREMENTS="$2"
+    shift # past argument
+    shift # past value
+    ;;
+    -s|--site)
+    SITE="$2"
+    shift # past argument
+    shift # past value
+    ;;
+    -h|--help)
+    HELP=true
+    shift # past argument
+    shift # past value
+    ;;
+    -f|--fast)
+    FAST=true
+    shift # past argument
+    ;;
+    *)    # unknown option
+    POSITIONAL+=("$1") # save it in an array for later
+    shift # past argument
+    ;;
+esac
+done
+set -- "${POSITIONAL[@]}" # restore positional parameters
+
+if [ "$HELP" == "true" ]; then
+    show_help_information
+    exit 0
+fi
+
+#process
+echo_info "Справочная информация доступна по ключу -h."
 update_nginx
-pip_install_requirements
+if [ -z "$FAST" ]; then
+    cd ${DIR}
+    find . -name '*.pyc' -delete
+    pip_install_requirements ${REQUIREMENTS}
+fi
 configure_apilib
 update_submodules
-if [ "$1" == "screen" ];then
+if [ "$SITE" == "screen" ];then
     run_servers
+elif [ -n $SITE ]; then
+    run_local_server $SITE
 fi
