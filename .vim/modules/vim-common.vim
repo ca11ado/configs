@@ -71,8 +71,9 @@ map ,spr :set spell spelllang=ru
 map ,spe :set spell spelllang=en 
 
 "nerdtree
-map ,nv :NERDTreeVCS<CR>
-map ,nn :NERDTree<CR>
+map ,nn :NERDTreeVCS<CR>
+map ,nd :NERDTree<CR>
+map ,nf :NERDTreeFind<CR>
 
 "sessions
 let g:sessions_dir = '~/.vim/sessions'
