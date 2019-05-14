@@ -12,6 +12,9 @@ set wrap
 "let g:XkbSwitchLib = '/usr/local/lib/libxkbswitch.dylib'
 "set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
 
+"fzf
+set rtp+=/usr/local/opt/fzf
+
 "completion for the vim command line by <Tab>
 set wildmenu 
 set wildmode=longest:full,full
