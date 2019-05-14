@@ -56,6 +56,8 @@ copy_vim_configs () {
     "$source_vim_dir/colors"
     "$source_vim_dir/spell"
     "$source_vim_dir/autoload"
+    "$source_vim_dir/vimrc"
+    "$source_vim_dir/viminfo"
     "$dest_vim_dir"
   )
   rsync "${ARGS[@]}"
