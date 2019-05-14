@@ -4,6 +4,7 @@ set shiftwidth=2
 set expandtab "use spaces instead of tabs"
 set splitright
 set wrap
+set showtabline=2
 "set so=999 "cursor always in the middle of the screen
 
 "Автоматическое переключение на русскую расскладку
@@ -11,6 +12,10 @@ set wrap
 "let g:XkbSwitchIMappings = ['ru']
 "let g:XkbSwitchLib = '/usr/local/lib/libxkbswitch.dylib'
 "set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
+
+"taboo plugin for formating tabs names
+set sessionoptions+=tabpages,globals
+let g:taboo_tab_format = " <%P>: %f"
 
 "fzf
 set rtp+=/usr/local/opt/fzf

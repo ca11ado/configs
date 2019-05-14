@@ -47,7 +47,6 @@ copy_vim_configs () {
   if [ ! -d "$sessions_vim_dir" ]; then
     mkdir $sessions_vim_dir
   fi
-  cp $source_path/.vimrc $dest_path
   ARGS=(
     "-avz"
     "--filter=:- .gitignore"
