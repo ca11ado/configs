@@ -77,7 +77,7 @@ map <leader>z <C-z>
 map <leader>l :!clear; and eslint %<CR>
 
 map <leader>ff :CtrlPRoot<CR>
-map <leader>fn :Ack<SPACE>
+map <leader>fn :Ack --ignore-dir=node_modules --ignore-dir=.git --ignore-dir=.idea ""<Left>
 
 map <leader>sps :set spell spelllang=ru,en
 map <leader>spr :set spell spelllang=ru 
