@@ -78,6 +78,8 @@ map <leader>l :!clear; and eslint %<CR>
 
 map <leader>ff :CtrlPRoot<CR>
 map <leader>fn :Ack --ignore-dir=node_modules --ignore-dir=.git --ignore-dir=.idea ""<Left>
+map ,fj :Ack --ignore-dir=node_modules --ignore-dir=.git --ignore-dir=.idea "" ./static/src/<Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left>
+map ,ft :Ack --ignore-dir=node_modules --ignore-dir=.git --ignore-dir=.idea "" ./templates/<Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left>
 
 map <leader>sps :set spell spelllang=ru,en
 map <leader>spr :set spell spelllang=ru 
