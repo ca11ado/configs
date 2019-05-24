@@ -72,7 +72,6 @@ map <C-k> <C-W><Up>
 map <C-j> <C-W><Down>
 
 map <leader>c :%w !pbcopy<cr>
-map <leader>b :!browser-sync start --no-notify --no-ui --server --files % > /dev/null 2>&1 &<CR>
 map <leader>z <C-z>
 map <leader>l :!clear; and eslint %<CR>
 
