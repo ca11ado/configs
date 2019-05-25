@@ -37,6 +37,20 @@ copy_git_configs () {
   rsync "${ARGS[@]}"
 }
 
+copy_nvim_configs () {
+  source_nvim_dir=$source_path/.config
+  dest_vim_dir=$dest_path/.config
+  if [ ! -d "$dest_vim_dir" ]; then
+    mkdir $dest_vim_dir
+  fi
+  ARGS=(
+    "-avz"
+    "$source_nvim_dir/nvim"
+    "$dest_vim_dir"
+  )
+  rsync "${ARGS[@]}"
+}
+
 copy_vim_configs () {
   source_vim_dir=$source_path/.vim
   dest_vim_dir=$dest_path/.vim
@@ -158,6 +172,9 @@ if [ -n "$CONFIGS" ]; then
   fi
   if [[ $CONFIGS =~ 'f' ]]; then
     copy_fish_configs
+  fi
+  if [[ $CONFIGS =~ 'n' ]]; then
+    copy_nvim_configs
   fi
 else
   echo has no arguments, run interactive mode
