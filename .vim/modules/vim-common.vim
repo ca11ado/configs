@@ -6,6 +6,7 @@ set splitright
 set wrap
 set showtabline=2
 "set so=999 "cursor always in the middle of the screen
+set bg=dark
 
 "Автоматическое переключение на русскую расскладку
 "let g:XkbSwitchEnabled = 1
@@ -66,19 +67,36 @@ map <leader>ev :vsp <C-R>=expand("%:p:h") . "/" <CR>
 map <leader>et :tabe <C-R>=expand("%:p:h") . "/" <CR>
 map <leader>ec :tab sp<CR>
 
-map <C-l> <C-W><Right>
-map <C-h> <C-W><Left>
-map <C-k> <C-W><Up>
-map <C-j> <C-W><Down>
+"move to the split in the direction shown, or create a new split
+nnoremap <silent> <C-h> :call WinMove('h')<cr>
+nnoremap <silent> <C-j> :call WinMove('j')<cr>
+nnoremap <silent> <C-k> :call WinMove('k')<cr>
+nnoremap <silent> <C-l> :call WinMove('l')<cr>
+
+function! WinMove(key)
+  let t:curwin = winnr()
+  exec "wincmd ".a:key
+  if (t:curwin == winnr())
+    if (match(a:key,'[jk]'))
+      wincmd v
+    else
+      wincmd s
+    endif
+    exec "wincmd ".a:key
+  endif
+endfunction
+
 
 map <leader>c :%w !pbcopy<cr>
+"map <leader>b :!browser-sync start --no-notify --no-ui --server --files % > /dev/null 2>&1 &<CR>
 map <leader>z <C-z>
-map <leader>l :!clear; and eslint %<CR>
+"map <leader>l :!clear; and eslint %<CR>
 
-map <leader>ff :CtrlPRoot<CR>
-map <leader>fn :Ack --ignore-dir=node_modules --ignore-dir=.git --ignore-dir=.idea ""<Left>
-map <leader>fj :Ack --ignore-dir=node_modules --ignore-dir=.git --ignore-dir=.idea "" ./static/src/<Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left>
-map <leader>ft :Ack --ignore-dir=node_modules --ignore-dir=.git --ignore-dir=.idea "" ./templates/<Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left>
+"move lines around
+nnoremap <leader>k :m-2<cr>==
+nnoremap <leader>j :m+<cr>==
+xnoremap <leader>k :m-2<cr>gv=gv
+xnoremap <leader>j :m'>+<cr>gv=gv
 
 map <leader>sps :set spell spelllang=ru,en
 map <leader>spr :set spell spelllang=ru 
@@ -93,6 +111,33 @@ map <leader>nf :NERDTreeFind<CR>
 let g:sessions_dir = '~/.vim/sessions'
 exec 'nnoremap <Leader>ss :mks! ' . g:sessions_dir . '/*.vim<C-D><BS><BS><BS><BS><BS>'
 exec 'nnoremap <Leader>sr :so ' . g:sessions_dir. '/*.vim<C-D><BS><BS><BS><BS><BS>'
+
+"search project files
+nnoremap <leader>ff :FZF<cr>
+"search project files by lines of code
+nnoremap <leader>fl :Lines<cr>
+"search project files by tags (requirs ctags to be installed)
+nnoremap <leader>ft :Tags<cr>
+"search all open files/buffers
+nnoremap <leader>fb :Buffers<cr>
+
+"start a search query by pressing \
+nnoremap \  :Ag<space>
+"search for word under cursor by pressing |
+nnoremap \| :Ag <C-R><C-W><cr>:cw<cr>
+
+"replace the word under cursor
+nnoremap <leader>fr :%s/\<<c-r><c-w>\>//g<left><left>
+
+set tags+=.git/tags
+nnoremap <leader>ct :!ctags -Rf .git/tags --tag-relative --extra=+f --exclude=.git,pkg --languages=-sql<cr><cr>
+
+"Tab to switch to next open buffer
+nnoremap <Tab> :bnext<cr>
+"Shift + Tab to switch to previous open buffer
+nnoremap <S-Tab> :bprevious<cr>
+"leader key twice to cycle between last two open buffers
+nnoremap <leader><leader> <c-^>
 
 "command mode
 cmap <C-p> <Up>
