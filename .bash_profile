@@ -8,15 +8,15 @@ export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
 alias ls='ls -GFh'
-alias vpn='~/Scripts/vpn.sh'
 
-export NVM_DIR="/Users/a.khimtsov/.nvm"
+export NVM_DIR=~/.nvm
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
     . $(brew --prefix)/etc/bash_completion
 fi
 
+export GOPATH=$HOME/Projects/Lamoda/go-site
 #homebrew nvm installation
-export NVM_DIR=~/.nvm
-  . $(brew --prefix nvm)/nvm.sh
+#export NVM_DIR=~/.nvm
+#  . $(brew --prefix nvm)/nvm.sh
