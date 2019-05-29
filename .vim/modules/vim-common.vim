@@ -120,6 +120,8 @@ nnoremap <leader>fl :Lines<cr>
 nnoremap <leader>ft :Tags<cr>
 "search all open files/buffers
 nnoremap <leader>fb :Buffers<cr>
+"search all files in git index
+nnoremap <leader>fg :GFiles<cr>
 
 "start a search query by pressing \
 nnoremap \  :Ag<space>
@@ -137,7 +139,7 @@ nnoremap <Tab> :bnext<cr>
 "Shift + Tab to switch to previous open buffer
 nnoremap <S-Tab> :bprevious<cr>
 "leader key twice to cycle between last two open buffers
-nnoremap <leader><leader> <c-^>
+nnoremap <leader><SPACE> <c-^>
 
 "command mode
 cmap <C-p> <Up>
