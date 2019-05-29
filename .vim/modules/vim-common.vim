@@ -7,6 +7,7 @@ set wrap
 set showtabline=2
 "set so=999 "cursor always in the middle of the screen
 set bg=dark
+set cursorline
 
 "Автоматическое переключение на русскую расскладку
 "let g:XkbSwitchEnabled = 1
