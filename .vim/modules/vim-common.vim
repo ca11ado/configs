@@ -151,3 +151,7 @@ function! s:find_git_root()
 endfunction
 
 command! ProjectFiles execute 'Files' s:find_git_root()
+
+nnoremap <silent> <leader>rr1 :exe "resize " . (winheight(0) * 3/2)<CR>
+nnoremap <silent> <leader>rr2 :exe "resize " . (winheight(0) * 1/3)<CR>
+nnoremap <leader>rr= <C-w>=
