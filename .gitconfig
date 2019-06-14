@@ -33,6 +33,7 @@
   uin = !echo '>>>>> COMMITS IN UPSTREAM NOT IN CURRENT BRANCH' && git log ..@{u} 
   uoff = !echo '>>>>> COMMITS IN CURRENT BRANCH NOT IN UPSTREAM' && git log @{u}..
   where-added = log --diff-filter=A
+  cp = cherry-pick 
 [diff]
 	tool = vimdiff
 [diff "tool"]
