@@ -41,7 +41,10 @@ source ~/.vim/modules/vim-set-color.vim
 
 "SEARCH"
 set hlsearch "highlight search occurrence"
-set ignorecase "ignore words case in search"
+
+"searches are case insensitive unless they contain at least one capital letter
+set ignorecase
+set smartcase
 
 set clipboard=unnamed 
 
@@ -127,7 +130,7 @@ nnoremap <leader>fg :GFiles<cr>
 "start a search query by pressing \
 nnoremap \  :Ag<space>
 "search for word under cursor by pressing |
-nnoremap \| :Ag <C-R><C-W><cr>:cw<cr>
+nnoremap \| :Ag <C-R><C-W><cr>
 
 "replace the word under cursor
 nnoremap <leader>fr :%s/\<<c-r><c-w>\>//g<left><left>
