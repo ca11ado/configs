@@ -26,6 +26,10 @@ set_source_dest_paths () {
   echo_warning "SOURCE PATH: $source_path"
 }
 
+copy_tmux_configs () {
+  ARGS=("-avz" "$source_path/.tmux.conf" "$dest_path/")
+  rsync "${ARGS[@]}"
+}
 copy_fish_configs () {
   fish_dir=.config
   ARGS=("-avz" "$source_path/$fish_dir" "$dest_path/")
@@ -175,6 +179,9 @@ if [ -n "$CONFIGS" ]; then
   fi
   if [[ $CONFIGS =~ 'n' ]]; then
     copy_nvim_configs
+  fi
+  if [[ $CONFIGS =~ 't' ]]; then
+    copy_tmux_configs
   fi
 else
   echo has no arguments, run interactive mode
