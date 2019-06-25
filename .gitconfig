@@ -35,6 +35,7 @@
   where-added = log --diff-filter=A
   cp = cherry-pick 
   pp-to-go = log --since 01.06.2019 -- templates/jinja/desktop/global/product templates/jinja/desktop/global/blocks/sizes.html templates/jinja/desktop/global/blocks/reviews-and-questions.html
+	alias = ! git config --get-regexp ^alias\\. | sed -e s/^alias\\.// -e s/\\ /\\ =\\ /
 [diff]
 	tool = vimdiff
 [diff "tool"]
