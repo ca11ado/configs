@@ -31,8 +31,8 @@ copy_tmux_configs () {
   rsync "${ARGS[@]}"
 }
 copy_fish_configs () {
-  fish_dir=.config
-  ARGS=("-avz" "$source_path/$fish_dir" "$dest_path/")
+  fish_dir=.config/fish
+  ARGS=("-avz" "$source_path/$fish_dir" "$dest_path/.config")
   rsync "${ARGS[@]}"
 }
 
