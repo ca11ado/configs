@@ -8,3 +8,4 @@ set -gx TMUX_GITBAR_DIR $HOME/.tmux/gitbar
 #set -gx NVM_DIR "$HOME/.nvm $NVM_DIR/nvm.sh"
 
 set fish_greeting ""
+source $HOME/.config/fish/functions/gitbar_update.fish
