@@ -26,6 +26,11 @@ set_source_dest_paths () {
   echo_warning "SOURCE PATH: $source_path"
 }
 
+
+copy_ctags_configs () {
+  ARGS=("-avz" "$source_path/.ctags" "$dest_path/")
+  rsync "${ARGS[@]}"
+}
 copy_tmux_configs () {
   ARGS=("-avz" "$source_path/.tmux.conf" "$dest_path/")
   rsync "${ARGS[@]}"
@@ -179,6 +184,7 @@ if [ -n "$CONFIGS" ]; then
   fi
   if [[ $CONFIGS =~ 'n' ]]; then
     copy_nvim_configs
+    copy_ctags_configs
   fi
   if [[ $CONFIGS =~ 't' ]]; then
     copy_tmux_configs
