@@ -14,6 +14,9 @@ set cursorline
 "let g:XkbSwitchIMappings = ['ru']
 "let g:XkbSwitchLib = '/usr/local/lib/libxkbswitch.dylib'
 "set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
+"
+" [Tags] Command to generate tags file
+let g:fzf_tags_command = 'ctags -Rf .git/tags --tag-relative --exclude=.git --exclude=pkg --exclude=node_modules --exclude=build --exclude=vendor'
 
 "taboo plugin for formating tabs names
 set sessionoptions+=tabpages,globals
@@ -136,7 +139,7 @@ nnoremap \| :Ag <C-R><C-W><cr>
 nnoremap <leader>fr :%s/\<<c-r><c-w>\>//g<left><left>
 
 set tags+=.git/tags
-nnoremap <leader>ct :!ctags -Rf .git/tags --tag-relative --extra=+f --exclude=.git,pkg --languages=-sql<cr><cr>
+nnoremap <leader>ct :!ctags -Rf .git/tags --tag-relative --exclude=.git --exclude=pkg --exclude=node_modules --exclude=build --exclude=vendor<cr><cr>
 
 "Tab to switch to next open buffer
 nnoremap <Tab> :bnext<cr>
