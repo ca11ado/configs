@@ -133,6 +133,11 @@ do
 key="$1"
 
 case $key in
+    -i|--install)
+    INSTALL=1
+    shift # past argument
+    shift # past value
+    ;;
     -c|--config)
     CONFIGS="$2"
     shift # past argument
@@ -167,9 +172,25 @@ else
   COPY_DIRECTION="from_repo" #`from_repo` and `to_repo`
 fi
 
-set_source_dest_paths
+if [ -n "$INSTALL" ]; then
+  source ./bin/vim-install-additional.sh 
+  check_os
+  
+  if install_ctags; then
+    echo_success "ctags was installed successefully"
+  else
+    echo_error "ERROR: when installing ctags"
+  fi
+
+  if install_ctags_patterns; then
+    echo_success "ctags patterns was installed successefully"
+  else
+    echo_error "ERORR: when installing ctags patterns"
+  fi
+fi
 
 if [ -n "$CONFIGS" ]; then
+  set_source_dest_paths
   if [[ $CONFIGS =~ 'v' ]]; then
     copy_vim_configs
   fi
@@ -189,8 +210,5 @@ if [ -n "$CONFIGS" ]; then
   if [[ $CONFIGS =~ 't' ]]; then
     copy_tmux_configs
   fi
-else
-  echo has no arguments, run interactive mode
-  interactive_mode
 fi
 
