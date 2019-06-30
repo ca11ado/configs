@@ -14,7 +14,7 @@ install_ctags () {
     sudo apt install exuberant-ctags
   fi
   if [ "$OS" == "Mac" ]; then
-    brew install  exuberant-ctags
+    brew install  ctags-exuberant
   fi
 }
 

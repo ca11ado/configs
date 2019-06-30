@@ -1,5 +1,4 @@
-#should clone and install at this folder: https://github.com/romainl/ctags-patterns-for-javascript.git
---options=/Users/t0s/Applications/ctags-patterns-for-javascript/ctagsrc
+--options=/Users/t0s/.vim/ctags-patterns-for-javascript/ctagsrc
 
 --exclude=.git
 --exclude=node_modules
