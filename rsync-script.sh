@@ -191,6 +191,15 @@ fi
 
 if [ -n "$CONFIGS" ]; then
   set_source_dest_paths
+  if [[ $CONFIGS == 'all' ]]; then
+    copy_vim_configs
+    copy_bash_configs
+    copy_git_configs
+    copy_fish_configs
+    copy_nvim_configs
+    copy_ctags_configs
+    copy_tmux_configs
+  fi
   if [[ $CONFIGS =~ 'v' ]]; then
     copy_vim_configs
   fi
