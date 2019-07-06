@@ -30,6 +30,10 @@ set_source_dest_paths () {
 copy_ctags_configs () {
   ARGS=("-avz" "$source_path/.ctags" "$dest_path/")
   rsync "${ARGS[@]}"
+
+  CTAGS_OPTION=--options=${HOME}/.vim/ctags-patterns-for-javascript/ctagsrc
+  sed -i.bak '1 s@^.*$@'"$CTAGS_OPTION"'@' $dest_path/.ctags
+  rm ~/.ctags.bak
 }
 copy_tmux_configs () {
   ARGS=("-avz" "$source_path/.tmux.conf" "$dest_path/")

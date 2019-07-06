@@ -1,4 +1,4 @@
---options=/Users/t0s/.vim/ctags-patterns-for-javascript/ctagsrc
+#### This line will be replaces by rsync-script.sh
 
 --exclude=.git
 --exclude=node_modules
