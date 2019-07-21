@@ -9,12 +9,6 @@ set showtabline=2
 set bg=dark
 set cursorline
 
-"Автоматическое переключение на русскую расскладку
-"let g:XkbSwitchEnabled = 1
-"let g:XkbSwitchIMappings = ['ru']
-"let g:XkbSwitchLib = '/usr/local/lib/libxkbswitch.dylib'
-"set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
-"
 " [Tags] Command to generate tags file
 let g:fzf_tags_command = 'ctags -Rf .git/tags --tag-relative --exclude=.git --exclude=pkg --exclude=node_modules --exclude=build --exclude=vendor'
 
@@ -131,9 +125,17 @@ nnoremap <leader>fb :Buffers<cr>
 nnoremap <leader>fg :GFiles<cr>
 
 "start a search query by pressing \
-nnoremap \  :Ag<space>
+nnoremap \  :Ag!<space>
 "search for word under cursor by pressing |
-nnoremap \| :Ag <C-R><C-W><cr>
+nnoremap \| :Ag! <C-R><C-W><cr>
+"if using Ag! it will be opened in full screen with preview
+command! -bang -nargs=* Ag
+  \ call fzf#vim#ag_raw(<q-args>,
+  \                 <bang>0 ? fzf#vim#with_preview('up:60%')
+  \                         : fzf#vim#with_preview('right:50%:hidden', '?'),
+  \                 <bang>0)
+"pass directory argument to Ag command
+"command! -bang -nargs=+ -complete=dir Ag call fzf#vim#ag_raw(<q-args>, <bang>0)
 
 "replace the word under cursor
 nnoremap <leader>fr :%s/\<<c-r><c-w>\>//g<left><left>
@@ -161,3 +163,4 @@ command! ProjectFiles execute 'Files' s:find_git_root()
 nnoremap <silent> <leader>rr1 :exe "resize " . (winheight(0) * 3/2)<CR>
 nnoremap <silent> <leader>rr2 :exe "resize " . (winheight(0) * 1/3)<CR>
 nnoremap <leader>rr= <C-w>=
+
