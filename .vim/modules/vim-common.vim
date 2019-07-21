@@ -129,7 +129,7 @@ nnoremap \  :Ag!<space>
 "search for word under cursor by pressing |
 nnoremap \| :Ag! <C-R><C-W><cr>
 "if using Ag! it will be opened in full screen with preview
-command! -bang -nargs=* Ag
+command! -bang -complete=dir -nargs=* Ag
   \ call fzf#vim#ag_raw(<q-args>,
   \                 <bang>0 ? fzf#vim#with_preview('up:60%')
   \                         : fzf#vim#with_preview('right:50%:hidden', '?'),
