@@ -127,6 +127,8 @@ nnoremap <leader>fg :GFiles<cr>
 nnoremap <leader>fc :Commits<cr>
 "search commit in current git log
 nnoremap <leader>fm :Marks<cr>
+"search yanked text (from register)
+nnoremap <leader>fy :Ag! <C-R>0<CR>
 
 "start a search query by pressing \
 nnoremap \  :Ag!<space>
