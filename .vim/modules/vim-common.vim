@@ -123,6 +123,10 @@ nnoremap <leader>ft :Tags<cr>
 nnoremap <leader>fb :Buffers<cr>
 "search all files in git index
 nnoremap <leader>fg :GFiles<cr>
+"search commit in current git log
+nnoremap <leader>fc :Commits<cr>
+"search commit in current git log
+nnoremap <leader>fm :Marks<cr>
 
 "start a search query by pressing \
 nnoremap \  :Ag!<space>
