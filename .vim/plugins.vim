@@ -16,3 +16,4 @@ Plug 'scrooloose/nerdtree'
 Plug 'gcmt/taboo.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'valloric/matchtagalways'
