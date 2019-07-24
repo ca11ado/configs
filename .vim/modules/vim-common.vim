@@ -145,6 +145,8 @@ command! -bang -complete=dir -nargs=* Ag
 
 "replace the word under cursor
 nnoremap <leader>fr :%s/\<<c-r><c-w>\>//g<left><left>
+"replace the word from register
+nnoremap <leader>ry :%s/<c-r>0/g<left><left>
 
 set tags+=.git/tags
 nnoremap <leader>ct :!ctags -Rf .git/tags --tag-relative --exclude=.git --exclude=pkg --exclude=node_modules --exclude=build --exclude=vendor<cr><cr>
