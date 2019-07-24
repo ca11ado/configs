@@ -28,11 +28,12 @@
   pushu = push -u origin HEAD
   lo = log --oneline
   lm = !echo '------------ COMMITS HEAD > MASTER' && git log origin/master..HEAD --oneline && echo '------------ COMMITS MASTER > HEAD' && git log HEAD..origin/master --oneline
-  #git lf master -- found files that contains master and not contains current branch
-  lf = diff-tree --no-commit-id --name-only -r
+  uin = !echo '------ HEAD..UPSTREAM' && git lo ..@{u} 
+  uoff = !echo '------ UPSTREAM..HEAD' && git lo @{u}..
+  lu = !git uin && git uoff
+  #show only names files in commit
+  names = diff-tree --no-commit-id --name-only -r
   st = !git for-each-ref --sort=taggerdate --format '%(refname) %(taggerdate)' refs/tags
-  uin = !echo '>>>>> COMMITS IN UPSTREAM NOT IN CURRENT BRANCH' && git log ..@{u} 
-  uoff = !echo '>>>>> COMMITS IN CURRENT BRANCH NOT IN UPSTREAM' && git log @{u}..
   where-added = log --diff-filter=A
   cp = cherry-pick 
   pp-to-go = log --since 01.06.2019 -- templates/jinja/desktop/global/product templates/jinja/desktop/global/blocks/sizes.html templates/jinja/desktop/global/blocks/reviews-and-questions.html
