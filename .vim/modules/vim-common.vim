@@ -144,9 +144,9 @@ command! -bang -complete=dir -nargs=* Ag
 "command! -bang -nargs=+ -complete=dir Ag call fzf#vim#ag_raw(<q-args>, <bang>0)
 
 "replace the word under cursor
-nnoremap <leader>fr :%s/\<<c-r><c-w>\>//g<left><left>
+nnoremap <leader>rc :%s/\<<c-r><c-w>\>//gc<left><left>
 "replace the word from register
-nnoremap <leader>ry :%s/<c-r>0/g<left><left>
+nnoremap <leader>ry :%s/<c-r>0/gc<left><left>
 
 set tags+=.git/tags
 nnoremap <leader>ct :!ctags -Rf .git/tags --tag-relative --exclude=.git --exclude=pkg --exclude=node_modules --exclude=build --exclude=vendor<cr><cr>
