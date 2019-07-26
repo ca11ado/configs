@@ -113,6 +113,8 @@ let g:sessions_dir = '~/.vim/sessions'
 exec 'nnoremap <Leader>ss :mks! ' . g:sessions_dir . '/*.vim<C-D><BS><BS><BS><BS><BS>'
 exec 'nnoremap <Leader>sr :so ' . g:sessions_dir. '/*.vim<C-D><BS><BS><BS><BS><BS>'
 
+"search word in file and show matching count
+nnoremap / :%s///ng<Left><Left><Left><Left>
 "search project files
 nnoremap <leader>ff :FZF<cr>
 "search project files by lines of code
