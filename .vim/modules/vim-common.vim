@@ -6,6 +6,7 @@ set splitright
 set wrap
 set showtabline=2
 "set so=999 "cursor always in the middle of the screen
+set so=8
 set bg=dark
 set cursorline
 
