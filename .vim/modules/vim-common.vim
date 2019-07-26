@@ -38,6 +38,7 @@ source ~/.vim/modules/vim-set-color.vim
 
 "SEARCH"
 set hlsearch "highlight search occurrence"
+set nowrapscan "stop recursive search
 
 "searches are case insensitive unless they contain at least one capital letter
 set ignorecase
