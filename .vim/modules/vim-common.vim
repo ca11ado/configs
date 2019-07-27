@@ -146,6 +146,9 @@ command! -bang -complete=dir -nargs=* Ag
   \                 <bang>0)
 "pass directory argument to Ag command
 "command! -bang -nargs=+ -complete=dir Ag call fzf#vim#ag_raw(<q-args>, <bang>0)
+"enable preview for marks
+command! -bang Marks
+  \ call fzf#vim#marks({'options': ['--preview', 'echo line = {}']})
 
 "replace the word under cursor
 nnoremap <leader>rc :%s/\<<c-r><c-w>\>//gc<left><left>
