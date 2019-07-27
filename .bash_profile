@@ -17,6 +17,11 @@ if [ -f $(brew --prefix)/etc/bash_completion ]; then
 fi
 
 export GOPATH=$HOME/Projects/Lamoda/go-site
+if [ -d "/Users/t0s" ]; then
+  export GOPATH=$HOME/Projects/Lamoda/Go-Frontend # home mac
+else
+  export GOPATH=$HOME/Projects/Lamoda/go-site # work mac
+fi
 #homebrew nvm installation
 #export NVM_DIR=~/.nvm
 #  . $(brew --prefix nvm)/nvm.sh
