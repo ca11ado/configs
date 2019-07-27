@@ -74,6 +74,8 @@ copy_vim_configs () {
   if [ ! -d "$sessions_vim_dir" ]; then
     mkdir $sessions_vim_dir
   fi
+  rm $dest_vim_dir/modules/*
+
   ARGS=(
     "-avz"
     "--filter=:- .gitignore"
