@@ -65,29 +65,29 @@ copy_nvim_configs () {
 }
 
 copy_vim_configs () {
-  source_vim_dir=$source_path/.vim
-  dest_vim_dir=$dest_path/.vim
-  sessions_vim_dir=$dest_vim_dir/sessions
-  if [ ! -d "$dest_vim_dir" ]; then
-    mkdir $dest_vim_dir
+  VIM_SOURCE_DIR=$source_path/.vim
+  VIM_DIRS=("modules" "colors" "spell" "autoload")
+  VIM_FILES=("bootstrap.vim" "plugins.vim" "vimrc" "viminfo")
+  VIM_DEST_DIR=$dest_path/.vim
+
+  sessions_vim_dir=$VIM_DEST_DIR/sessions
+  if [ ! -d "$VIM_DEST_DIR" ]; then
+    mkdir $VIM_DEST_DIR
   fi
   if [ ! -d "$sessions_vim_dir" ]; then
     mkdir $sessions_vim_dir
   fi
-  rm $dest_vim_dir/modules/*
+
+  DEST_TO_CLEAN="${VIM_DIRS[@]/#/${VIM_DEST_DIR}/}"
+  echo ${DEST_TO_CLEAN[@]}
+  echo "${DEST_TO_CLEAN[@]/%//*}" # do not work on that stage
 
   ARGS=(
     "-avz"
     "--filter=:- .gitignore"
-    "$source_vim_dir/bootstrap.vim"
-    "$source_vim_dir/plugins.vim"
-    "$source_vim_dir/modules"
-    "$source_vim_dir/colors"
-    "$source_vim_dir/spell"
-    "$source_vim_dir/autoload"
-    "$source_vim_dir/vimrc"
-    "$source_vim_dir/viminfo"
-    "$dest_vim_dir"
+    "${VIM_DIRS[@]/#/${VIM_SOURCE_DIR}/}" # array with prefixes
+    "${VIM_FILES[@]/#/${VIM_SOURCE_DIR}/}"
+    "$VIM_DEST_DIR"
   )
   rsync "${ARGS[@]}"
 }
