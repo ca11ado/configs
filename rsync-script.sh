@@ -68,11 +68,15 @@ copy_vim_configs () {
   source_vim_dir=$source_path/.vim
   dest_vim_dir=$dest_path/.vim
   sessions_vim_dir=$dest_vim_dir/sessions
+  examples_vim_dir=$dest_vim_dir/examples
   if [ ! -d "$dest_vim_dir" ]; then
     mkdir $dest_vim_dir
   fi
   if [ ! -d "$sessions_vim_dir" ]; then
     mkdir $sessions_vim_dir
+  fi
+  if [ ! -d "$examples_vim_dir" ]; then
+    mkdir $examples_vim_dir
   fi
   rm $dest_vim_dir/modules/*
 
@@ -85,6 +89,7 @@ copy_vim_configs () {
     "$source_vim_dir/colors"
     "$source_vim_dir/spell"
     "$source_vim_dir/autoload"
+    "$source_vim_dir/examples"
     "$source_vim_dir/vimrc"
     "$source_vim_dir/viminfo"
     "$dest_vim_dir"
