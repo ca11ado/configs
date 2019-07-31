@@ -5,6 +5,7 @@ set expandtab "use spaces instead of tabs"
 set splitright
 set wrap
 set showtabline=2
+set hidden "allow move from unsaved buffer without error
 "set so=999 "cursor always in the middle of the screen
 set so=8
 set bg=dark
