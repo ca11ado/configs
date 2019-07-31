@@ -109,6 +109,11 @@ nnoremap <Tab> :bnext<cr>
 nnoremap <S-Tab> :bprevious<cr>
 "leader key twice to cycle between last two open buffers
 nnoremap <leader><SPACE> <c-^>
+"switch to the next argument file
+nnoremap <leader><Tab> :n<cr>
+"Shift + Tab to switch to previous argument file
+nnoremap <leader><S-Tab> :p<cr>
+
 
 "command mode
 cmap <C-p> <Up>
