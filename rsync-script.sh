@@ -69,6 +69,9 @@ copy_vim_configs () {
   dest_vim_dir=$dest_path/.vim
   sessions_vim_dir=$dest_vim_dir/sessions
   examples_vim_dir=$dest_vim_dir/examples
+  ftplugin_vim_dir=$dest_vim_dir/ftplugin
+
+  #check dir existing
   if [ ! -d "$dest_vim_dir" ]; then
     mkdir $dest_vim_dir
   fi
@@ -78,6 +81,11 @@ copy_vim_configs () {
   if [ ! -d "$examples_vim_dir" ]; then
     mkdir $examples_vim_dir
   fi
+  if [ ! -d "$ftplugin_vim_dir" ]; then
+    mkdir $ftplugin_vim_dir
+  fi
+
+  #cleaning
   rm $dest_vim_dir/modules/*
 
   ARGS=(
@@ -90,6 +98,7 @@ copy_vim_configs () {
     "$source_vim_dir/spell"
     "$source_vim_dir/autoload"
     "$source_vim_dir/examples"
+    "$source_vim_dir/ftplugin"
     "$source_vim_dir/vimrc"
     "$source_vim_dir/viminfo"
     "$dest_vim_dir"
