@@ -14,13 +14,15 @@ install_ctags () {
     sudo apt install exuberant-ctags
   fi
   if [ "$OS" == "Mac" ]; then
-    brew install  ctags-exuberant
+    brew install ctags-exuberant
   fi
 }
 
 install_ctags_patterns () {
   DEST_DIR=${HOME}/.vim/ctags-patterns-for-javascript
-  git clone https://github.com/romainl/ctags-patterns-for-javascript.git ${DEST_DIR} \
-  && cd ${DEST_DIR} && make tags
+  if ! [ -d $DEST_DIR ]; then
+    git clone https://github.com/romainl/ctags-patterns-for-javascript.git ${DEST_DIR} \
+    && cd ${DEST_DIR} && make tags
+  fi
 }
 
