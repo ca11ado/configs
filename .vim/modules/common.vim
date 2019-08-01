@@ -13,6 +13,7 @@ set cursorline
 
 " [Tags] Command to generate tags file
 let g:fzf_tags_command = 'ctags -Rf .git/tags --tag-relative --exclude=.git --exclude=pkg --exclude=node_modules --exclude=build --exclude=vendor'
+let $FZF_DEFAULT_COMMAND = 'Ag -l --nogroup  --nocolor -g ""'
 
 "taboo plugin for formating tabs names
 set sessionoptions+=tabpages,globals
