@@ -16,24 +16,24 @@ map <leader>ec :tab sp<CR>
 nmap <leader>l :set list!<CR>
 
 "move to the split in the direction shown, or create a new split
-nnoremap <silent> <C-h> :call WinMove('h')<cr>
-nnoremap <silent> <C-j> :call WinMove('j')<cr>
-nnoremap <silent> <C-k> :call WinMove('k')<cr>
-nnoremap <silent> <C-l> :call WinMove('l')<cr>
+nnoremap <silent> <C-h> <C-W>h
+nnoremap <silent> <C-j> <C-W>j
+nnoremap <silent> <C-k> <C-W>k
+nnoremap <silent> <C-l> <C-W>l
 
-function! WinMove(key)
-  let t:curwin = winnr()
-  exec "wincmd ".a:key
-  if (t:curwin == winnr())
-    if (match(a:key,'[jk]'))
-      wincmd v
-    else
-      wincmd s
-    endif
-    exec "wincmd ".a:key
+"open split
+nnoremap <leader>eh :call WinOpen('h')<cr>
+nnoremap <leader>ej :call WinOpen('j')<cr>
+nnoremap <leader>ek :call WinOpen('k')<cr>  
+nnoremap <leader>el :call WinOpen('l')<cr> 
+
+function! WinOpen(key)
+  if (match(a:key,'[jk]'))
+    wincmd v
+  else
+    wincmd s
   endif
 endfunction
-
 
 map <leader>c :%w !LANG=en_US.UTF-8 pbcopy<cr>
 "map <leader>b :!browser-sync start --no-notify --no-ui --server --files % > /dev/null 2>&1 &<CR>
