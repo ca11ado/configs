@@ -2,5 +2,5 @@
 # It should contain path to the gitbar update file
 function gitbar_update --on-event fish_postexec --description 'Update tmux gitbar'
   #eval "$PROMPT_COMMAND"
-  $HOME/.tmux/gitbar/update-gitbar
+  #$HOME/.tmux/gitbar/update-gitbar
 end

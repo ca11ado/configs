@@ -36,7 +36,7 @@ copy_ctags_configs () {
   rm ~/.ctags.bak
 }
 copy_tmux_configs () {
-  ARGS=("-avz" "$source_path/.tmux.conf" "$source_path/.tmux-gitbar.conf" "$dest_path/")
+  ARGS=("-avz" "$source_path/.tmux.conf" "$dest_path/")
   rsync "${ARGS[@]}"
 }
 copy_fish_configs () {
