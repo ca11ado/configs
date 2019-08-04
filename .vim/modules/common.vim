@@ -14,6 +14,7 @@ set cursorline
 "plugin airline 
 let g:airline#extensions#tabline#left_sep = '> '
 let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#formatter = 'unique_tail' 
 
 " [Tags] Command to generate tags file
 let g:fzf_tags_command = 'ctags -Rf .git/tags --tag-relative --exclude=.git --exclude=pkg --exclude=node_modules --exclude=build --exclude=vendor'
