@@ -13,7 +13,7 @@ Plug 'posva/vim-vue'
 Plug 'rafi/awesome-vim-colorschemes'
 Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdtree'
-Plug 'gcmt/taboo.vim'
+"Plug 'gcmt/taboo.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'valloric/matchtagalways'

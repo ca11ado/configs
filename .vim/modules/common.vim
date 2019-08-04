@@ -11,15 +11,15 @@ set so=8
 set bg=dark
 set cursorline
 
+"plugin airline 
+let g:airline#extensions#tabline#left_sep = '> '
+let g:airline#extensions#tabline#enabled = 1
+
 " [Tags] Command to generate tags file
 let g:fzf_tags_command = 'ctags -Rf .git/tags --tag-relative --exclude=.git --exclude=pkg --exclude=node_modules --exclude=build --exclude=vendor'
 let $FZF_DEFAULT_COMMAND = 'Ag -l --nogroup  --nocolor -g ""'
 
-"taboo plugin for formating tabs names
-set sessionoptions+=tabpages,globals
-let g:taboo_tab_format = " <%P>: %f"
-
-"fzf
+"plugin fzf
 set rtp+=/usr/local/opt/fzf
 
 "completion for the vim command line by <Tab>
