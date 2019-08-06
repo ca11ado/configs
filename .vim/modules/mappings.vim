@@ -105,16 +105,17 @@ nnoremap <leader>ry :%s/<c-r>0//gc<left><left><left>
 set tags+=.git/tags
 nnoremap <leader>ct :!ctags -Rf .git/tags --tag-relative --exclude=.git --exclude=pkg --exclude=node_modules --exclude=build --exclude=vendor<cr><cr>
 
-"Tab to switch to next open buffer
-nnoremap <Tab> :bnext<cr>
-"Shift + Tab to switch to previous open buffer
-nnoremap <S-Tab> :bprevious<cr>
-"leader key twice to cycle between last two open buffers
+"Tab to switch to next open argument
+nnoremap <Tab> :next<cr>
+"Shift + Tab to switch to previous open argument
+nnoremap <S-Tab> :previous<cr>
+nnoremap <leader><Tab> :previous<cr>
+"leader key twice to cycle between last two open buffers or arguments
 nnoremap <leader><SPACE> <c-^>
-"switch to the next argument file
-nnoremap <leader><Tab> :n<cr>
-"Shift + Tab to switch to previous argument file
-nnoremap <leader><S-Tab> :p<cr>
+"switch to the next buffer
+nnoremap <leader>bn :n<cr>
+"switch to the previous buffer
+nnoremap <leader>:bp :p<cr>
 
 
 "command mode
