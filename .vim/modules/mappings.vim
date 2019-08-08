@@ -131,3 +131,6 @@ command! ProjectFiles execute 'Files' s:find_git_root()
 nnoremap <silent> <leader>rr1 :exe "resize " . (winheight(0) * 3/2)<CR>
 nnoremap <silent> <leader>rr2 :exe "resize " . (winheight(0) * 1/3)<CR>
 nnoremap <leader>rr= <C-w>=
+
+nmap <silent> <leader>sk <Plug>(ale_previous_wrap)
+nmap <silent> <leader>sj <Plug>(ale_next_wrap)
