@@ -134,3 +134,6 @@ nnoremap <leader>rr= <C-w>=
 
 nmap <silent> <leader>sk <Plug>(ale_previous_wrap)
 nmap <silent> <leader>sj <Plug>(ale_next_wrap)
+
+"select pasted text (https://vim.fandom.com/wiki/Selecting_your_pasted_text)
+nnoremap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'

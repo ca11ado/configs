@@ -12,9 +12,17 @@ set bg=dark
 set cursorline
 
 "plugin airline 
-let g:airline#extensions#tabline#left_sep = '> '
+"let g:airline#extensions#tabline#left_sep = '> '
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail' 
+let g:airline#extensions#default#section_truncate_width = {
+    \ 'b': 100,
+    \ 'x': 150,
+    \ 'y': 150,
+    \ 'z': 150,
+    \ 'warning': 150,
+    \ 'error': 50,
+    \ }
 
 " [Tags] Command to generate tags file
 let g:fzf_tags_command = 'ctags -Rf .git/tags --tag-relative --exclude=.git --exclude=pkg --exclude=node_modules --exclude=build --exclude=vendor'
