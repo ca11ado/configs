@@ -79,7 +79,7 @@ nnoremap <leader>fm :Marks<cr>
 "search yanked text (from register)
 nnoremap <leader>fy :Ag! <C-R>0<CR>
 "find word or use last searched and replace with clipboard
-nnoremap ,fr :%s//<C-r>*/gc<C-b><right><right><right>
+nnoremap <leader>fr :%s//<C-r>*/gc<C-b><right><right><right>
 
 "start a search query by pressing \
 nnoremap \  :Ag!<space>
@@ -98,7 +98,7 @@ command! -bang Marks
   \ call fzf#vim#marks({'options': ['--preview', 'echo line = {}']})
 
 "replace the word under cursor
-nnoremap <leader>rc :%s/\<<c-r><c-w>\>//gc<left><left>
+nnoremap <leader>rc :%s/\<<c-r><c-w>\>//gc<left><left><left>
 "replace the word from register
 nnoremap <leader>ry :%s/<c-r>0//gc<left><left><left>
 
