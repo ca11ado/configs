@@ -139,3 +139,8 @@ nmap <silent> <leader>sj <Plug>(ale_next_wrap)
 
 "select pasted text (https://vim.fandom.com/wiki/Selecting_your_pasted_text)
 nnoremap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'
+
+
+"Consistently direction of n/N characters
+nnoremap <expr> n 'Nn'[v:searchforward]
+nnoremap <expr> N 'nN'[v:searchforward]
