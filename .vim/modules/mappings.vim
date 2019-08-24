@@ -6,10 +6,12 @@ noremap k gk
 map <leader>w :w<CR>
 map <leader>qq :q<CR>
 map <leader>qw :x<CR>
-map <leader>ew :e <C-R>=expand("%:p:h") . "/" <CR>
-map <leader>es :sp <C-R>=expand("%:p:h") . "/" <CR>
-map <leader>ev :vsp <C-R>=expand("%:p:h") . "/" <CR>
-map <leader>et :tabe <C-R>=expand("%:p:h") . "/" <CR>
+
+cnoremap %% <C-R>=fnameescape(expand('%:h')).'/'<cr>
+map <leader>ew :e %%
+map <leader>es :sp %%
+map <leader>ev :vsp %%
+map <leader>et :tabe %%
 map <leader>ec :tab sp<CR>
 
 "show hidden chars if `listchars` defined
