@@ -17,11 +17,11 @@
 "color challenger_deep
 "color deep-space
 "color deus
-"color dracula
+color dracula
 "color flattened_dark
 "color flattened_light
 "color focuspoint
-color github
+"color github
 "color gotham
 "color gotham256
 "color gruvbox

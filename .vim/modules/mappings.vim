@@ -81,7 +81,7 @@ nnoremap <leader>fm :Marks<cr>
 "search yanked text (from register)
 nnoremap <leader>fy :Ag! <C-R>0<CR>
 "find word or use last searched and replace with clipboard
-nnoremap <leader>fr :%s//<C-r>*/gc<C-b><right><right><right>
+nnoremap <leader>fr :%s/<C-r>*//ng<CR>
 
 "start a search query by pressing \
 nnoremap \  :Ag!<space>
