@@ -8,3 +8,5 @@ nmap <leader>l :set list!<CR>
 nmap <leader>w :Wrap<CR>
 command! -nargs=* Wrap set wrap! linebreak!
 
+nmap <leader>gb :Gblame<CR>
+nmap <leader>gl :0Glog<CR>
