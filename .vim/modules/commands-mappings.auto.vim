@@ -14,9 +14,6 @@ map <leader>ev :vsp %%
 map <leader>et :tabe %%
 map <leader>ec :tab sp<CR>
 
-"show hidden chars if `listchars` defined
-nmap <leader>l :set list!<CR>
-
 "move to the split in the direction shown, or create a new split
 nnoremap <silent> <C-h> <C-W>h
 nnoremap <silent> <C-j> <C-W>j
@@ -139,7 +136,6 @@ nmap <silent> <leader>sj <Plug>(ale_next_wrap)
 
 "select pasted text (https://vim.fandom.com/wiki/Selecting_your_pasted_text)
 nnoremap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'
-
 
 "Consistently direction of n/N characters
 nnoremap <expr> n 'Nn'[v:searchforward]
