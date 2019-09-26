@@ -46,6 +46,9 @@
 [push]
   default = simple
 [merge]
-	tool = vimdiff
+	tool = diffconflicts
 [mergetool]
 	keepBackup = false
+[mergetool "diffconflicts"]
+	cmd = diffconflicts nvim $BASE $LOCAL $REMOTE $MERGED
+	trustExitCode = true

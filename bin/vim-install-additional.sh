@@ -26,3 +26,19 @@ install_ctags_patterns () {
   fi
 }
 
+set_diffconflicts_link () {
+  SOURCE_DIR=${HOME}/.config/git
+  DEST_DIR=/usr/local/bin
+  FILE_NAME=diffconflicts
+
+  if [ -f "${DEST_DIR}/${FILE_NAME}" ]; then
+    return 0;
+  else
+    if [ -f ${SOURCE_DIR}/${FILE_NAME} ]; then
+      return 1;
+    fi
+
+    ln -s ${SOURCE_DIR}/${FILE_NAME} ${DEST_DIR}/${FILE_NAME}
+  fi
+}
+

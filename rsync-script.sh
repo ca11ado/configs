@@ -46,7 +46,7 @@ copy_fish_configs () {
 }
 
 copy_git_configs () {
-  ARGS=("-avz" "$source_path/.gitconfig" "$dest_path/")
+  ARGS=("-avz" "$source_path/.gitconfig" "$source_path/.config/git" "$dest_path/")
   rsync "${ARGS[@]}"
 }
 
