@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# git mergetool diffconflicts script
+SOURCE_DIFFCONFLICTS_DIR=${HOME}/.config/git
+DEST_DIFFCONFLICTS_DIR=/usr/local/bin
+DEST_DIFFCONFLICTS_LINK_DIR=/usr/local/bin
+DIFFCONFLICTS_FILE_NAME=diffconflicts
+
 check_os () {
   unameOut="$(uname -s)"
   case "${unameOut}" in
@@ -19,26 +25,28 @@ install_ctags () {
 }
 
 install_ctags_patterns () {
-  DEST_DIR=${HOME}/.vim/ctags-patterns-for-javascript
-  if ! [ -d $DEST_DIR ]; then
-    git clone https://github.com/romainl/ctags-patterns-for-javascript.git ${DEST_DIR} \
-    && cd ${DEST_DIR} && make tags
+  DEST_DIFFCONFLICTS_DIR=${HOME}/.vim/ctags-patterns-for-javascript
+  if ! [ -d $DEST_DIFFCONFLICTS_DIR ]; then
+    git clone https://github.com/romainl/ctags-patterns-for-javascript.git ${DEST_DIFFCONFLICTS_DIR} \
+    && cd ${DEST_DIFFCONFLICTS_DIR} && make tags
+  fi
+}
+
+copy_diffconflicts () {
+  if ! [ -d "${DEST_DIFFCONFLICTS_DIR}" ]; then
+    mkdir "${DEST_DIFFCONFLICTS_DIR}"
+  fi
+
+  if ! [ -f "${DEST_DIFFCONFLICTS_DIR}/${DIFFCONFLICTS_FILE_NAME}" ]; then
+    cp "${SOURCE_DIFFCONFLICTS_DIR}/${DIFFCONFLICTS_FILE_NAME}" "${DEST_DIFFCONFLICTS_DIR}/${DIFFCONFLICTS_FILE_NAME}"
   fi
 }
 
 set_diffconflicts_link () {
-  SOURCE_DIR=${HOME}/.config/git
-  DEST_DIR=/usr/local/bin
-  FILE_NAME=diffconflicts
+  copy_diffconflicts
 
-  if [ -f "${DEST_DIR}/${FILE_NAME}" ]; then
-    return 0;
-  else
-    if [ -f ${SOURCE_DIR}/${FILE_NAME} ]; then
-      return 1;
-    fi
-
-    ln -s ${SOURCE_DIR}/${FILE_NAME} ${DEST_DIR}/${FILE_NAME}
+  if ! [ -L "${DEST_DIFFCONFLICTS_LINK_DIR}/${DIFFCONFLICTS_FILE_NAME}" ]; then
+    ln -s ${SOURCE_DIFFCONFLICTS_DIR}/${DIFFCONFLICTS_FILE_NAME} ${DEST_DIFFCONFLICTS_LINK_DIR}/${DIFFCONFLICTS_FILE_NAME}
   fi
 }
 

@@ -207,6 +207,12 @@ if [ -n "$INSTALL" ]; then
   else
     echo_error "ERORR: when installing ctags patterns"
   fi
+
+  if set_diffconflicts_link; then
+    echo_success "diffconflicts installed"
+  else
+    echo_error "some error while installing diffconflicts"
+  fi
 fi
 
 if [ -n "$CONFIGS" ]; then
