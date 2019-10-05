@@ -75,9 +75,9 @@ nnoremap <leader>fg :GFiles<cr>
 nnoremap <leader>fc :Commits<cr>
 "search commit in current git log
 nnoremap <leader>fm :Marks<cr>
-"search yanked text (from register)
+"search yanked text (from system register)
 nnoremap <leader>fy :Ag! <C-R>0<CR>
-"find word or use last searched and replace with clipboard
+"find word from (internal register)
 nnoremap <leader>fr :%s/<C-r>*//ng<CR>
 
 "start a search query by pressing \
@@ -99,7 +99,7 @@ command! -bang Marks
 "replace the word under cursor
 nnoremap <leader>rc :%s/\<<c-r><c-w>\>//gc<left><left><left>
 "replace the word from register
-nnoremap <leader>ry :%s/<c-r>0//gc<left><left><left>
+nnoremap <leader>ry :%s/<c-r>0/<c-r>0/gc<left><left><left>
 
 set tags+=.git/tags
 nnoremap <leader>ct :!ctags -Rf .git/tags --tag-relative --exclude=.git --exclude=pkg --exclude=node_modules --exclude=build --exclude=vendor<cr><cr>
