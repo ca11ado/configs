@@ -52,3 +52,5 @@
 [mergetool "diffconflicts"]
 	cmd = diffconflicts nvim $BASE $LOCAL $REMOTE $MERGED
 	trustExitCode = true
+[url "ssh://git@stash.lamoda.ru:7999"]
+	insteadOf = https://stash.lamoda.ru/scm
