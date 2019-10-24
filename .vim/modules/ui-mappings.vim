@@ -11,3 +11,6 @@ command! -nargs=* Wrap set wrap! linebreak!
 nmap <leader>gb :Gblame<CR>
 nmap <leader>gl :0Glog<CR>
 nmap <leader>gd :Gdiff<CR>
+
+"highlight off
+nmap <leader>h :noh<CR>
