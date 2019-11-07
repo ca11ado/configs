@@ -62,7 +62,7 @@ set clipboard=unnamed
 "set autochdir
 
 "characters for invisible symbols (use :set list and :set nolist)
-set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
+set listchars=eol:$,tab:▸·,trail:~,extends:>,precedes:<
 
 "set file status
 set laststatus=2
