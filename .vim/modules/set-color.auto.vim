@@ -18,6 +18,7 @@
 "color deep-space
 "color deus
 color dracula
+hi CursorLine cterm=NONE ctermbg=000
 "color flattened_dark
 "color flattened_light
 "color focuspoint
