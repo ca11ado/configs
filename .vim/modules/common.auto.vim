@@ -69,3 +69,5 @@ set laststatus=2
 
 "source ~/.vim/modules/mappings.vim 
 
+"highlight world under cursor (all occurences on page)
+:autocmd CursorMoved * exe printf('match IncSearch /\V\<%s\>/', escape(expand('<cword>'), '/\'))
