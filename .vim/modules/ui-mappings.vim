@@ -14,3 +14,21 @@ nmap <leader>gd :Gdiff<CR>
 
 "highlight off
 nmap <leader>h :noh<CR>
+
+function! ToggleVisualHighlight()
+  if !exists('#VisualHighlight#CursorMoved')
+    augroup VisualHighlight
+      autocmd!
+      "highlight world under cursor (all occurences on page)
+      autocmd CursorMoved * exe printf('match IncSearch /\V\<%s\>/', escape(expand('<cword>'), '/\'))
+    augroup END
+  else
+    augroup VisualHighlight
+      autocmd!
+      call clearmatches()
+    augroup END
+  endif
+endfunction
+:call ToggleVisualHighlight()
+
+nnoremap ,wh :call ToggleVisualHighlight()<CR>

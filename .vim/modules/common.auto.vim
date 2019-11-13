@@ -42,12 +42,6 @@ let g:ctrlp_custom_ignore = '\v[\/]node_modules$'
 let g:netrw_liststyle = 3
 let g:netrw_banner = 0
 
-"COLORS
-"source ~/.vim/modules/vim-set-color.vim
-
-"ESLINT
-"source ~/.vim/modules/vim-syntastic.vim
-
 "SEARCH"
 set hlsearch "highlight search occurrence"
 set nowrapscan "stop recursive search
@@ -58,16 +52,8 @@ set smartcase
 
 set clipboard=unnamed 
 
-"set current directory for opened buffer
-"set autochdir
-
 "characters for invisible symbols (use :set list and :set nolist)
 set listchars=eol:$,tab:▸·,trail:~,extends:>,precedes:<
 
 "set file status
 set laststatus=2
-
-"source ~/.vim/modules/mappings.vim 
-
-"highlight world under cursor (all occurences on page)
-:autocmd CursorMoved * exe printf('match IncSearch /\V\<%s\>/', escape(expand('<cword>'), '/\'))
