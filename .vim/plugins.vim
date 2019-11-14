@@ -20,3 +20,5 @@ Plug 'valloric/matchtagalways'
 Plug 'dense-analysis/ale'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'vim-airline/vim-airline'
+"highlight colors
+"Plug 'lilydjwg/colorizer'
