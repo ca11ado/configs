@@ -15,11 +15,15 @@ nmap <leader>gd :Gdiff<CR>
 "highlight off
 nmap <leader>h :noh<CR>
 
+augroup VisualHighlight
+  autocmd!
+augroup END
+
 function! ToggleVisualHighlight()
   if !exists('#VisualHighlight#CursorMoved')
     augroup VisualHighlight
-      autocmd! * <buffer>
-      autocmd CursorMoved <buffer> exe printf('match IncSearch /\V\<%s\>/', escape(expand('<cword>'), '/\'))
+      autocmd!
+      autocmd CursorMoved * exe printf('match IncSearch /\V\<%s\>/', escape(expand('<cword>'), '/\'))
     augroup END
   else
     augroup VisualHighlight
@@ -28,7 +32,8 @@ function! ToggleVisualHighlight()
     augroup END
   endif
 endfunction
+
 :call ToggleVisualHighlight()
 
 "highlight world under cursor in current buffer
-nnoremap ,wh :call ToggleVisualHighlight()<CR>
+nnoremap <leader>wh :call ToggleVisualHighlight()<CR>
