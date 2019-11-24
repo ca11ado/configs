@@ -19,11 +19,13 @@ augroup VisualHighlight
   autocmd!
 augroup END
 
+
+let blacklist = ['']
 function! ToggleVisualHighlight()
   if !exists('#VisualHighlight#CursorMoved')
     augroup VisualHighlight
       autocmd!
-      autocmd CursorMoved * exe printf('match IncSearch /\V\<%s\>/', escape(expand('<cword>'), '/\'))
+      autocmd CursorMoved * if index(blacklist, &ft) < 0 | exe printf('match IncSearch /\V\<%s\>/', escape(expand('<cword>'), '/\'))
     augroup END
   else
     augroup VisualHighlight
@@ -37,3 +39,4 @@ endfunction
 
 "highlight world under cursor in current buffer
 nnoremap <leader>wh :call ToggleVisualHighlight()<CR>
+
