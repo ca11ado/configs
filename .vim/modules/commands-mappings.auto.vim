@@ -80,6 +80,11 @@ nnoremap <leader>fy :Ag! <C-R>0<CR>
 "find word from (internal register)
 nnoremap <leader>fr :%s/<C-r>*//ng<CR>
 
+"search word under cursor and move downwardsssssssssssssssssssss
+nnoremap <leader>.. *:
+"search word under cursor and move upwards
+nnoremap <leader>.<leader> *NN
+
 "start a search query by pressing \
 nnoremap \  :Ag!<space>
 "search for word under cursor by pressing |
