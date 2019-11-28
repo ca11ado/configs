@@ -140,3 +140,6 @@ nnoremap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'
 "Consistently direction of n/N characters
 nnoremap <expr> n 'Nn'[v:searchforward]
 nnoremap <expr> N 'nN'[v:searchforward]
+
+"remove space symbol and add new line
+nnoremap <leader>a<space> xi<CR><ESC>
