@@ -12,8 +12,10 @@ nmap <leader>gb :Gblame<CR>
 nmap <leader>gl :0Glog<CR>
 nmap <leader>gd :Gdiff<CR>
 
-"highlight off
-nmap <leader>h :noh<CR>
+"search highlight off
+nmap <leader>hs :noh<CR>
+"highlight world under cursor in current buffer
+nnoremap <leader>hw :call ToggleVisualHighlight()<CR>
 
 augroup VisualHighlight
   autocmd!
@@ -37,6 +39,4 @@ endfunction
 
 :call ToggleVisualHighlight()
 
-"highlight world under cursor in current buffer
-nnoremap <leader>wh :call ToggleVisualHighlight()<CR>
 
