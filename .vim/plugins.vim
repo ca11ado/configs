@@ -22,3 +22,7 @@ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'vim-airline/vim-airline'
 "highlight colors
 "Plug 'lilydjwg/colorizer'
+
+"Snippets
+Plug 'sirver/ultisnips'
+Plug 'honza/vim-snippets'

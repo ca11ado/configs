@@ -57,3 +57,8 @@ set listchars=eol:$,tab:▸·,trail:~,extends:>,precedes:<
 
 "set file status
 set laststatus=2
+
+"Snippets plugin :help UltiSnips
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
