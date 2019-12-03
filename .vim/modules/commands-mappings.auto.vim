@@ -110,10 +110,13 @@ set tags+=.git/tags
 nnoremap <leader>ct :!ctags -Rf .git/tags --tag-relative --exclude=.git --exclude=pkg --exclude=node_modules --exclude=build --exclude=vendor<cr><cr>
 
 "Tab to switch to next open argument
-nnoremap <Tab> :bn<cr>
+"nnoremap <Tab> :bn<cr>
+nnoremap <leader>tn :bn<CR>
 "Shift + Tab to switch to previous open argument
-nnoremap <S-Tab> :bp<cr>
-nnoremap <leader><Tab> <c-^>
+nnoremap <leader>tp :bp<CR>
+"nnoremap <S-Tab> :bp<cr>
+"nnoremap <leader><Tab> <c-^>
+
 "leader key twice to cycle between last two open buffers or arguments
 nnoremap <leader><SPACE> <c-^>
 "switch to the next buffer
