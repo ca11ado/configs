@@ -4,7 +4,7 @@
 
 Plug 'Lokaltog/vim-easymotion'
 Plug 'Raimondi/delimitMate'
-"Plug 'Valloric/YouCompleteMe'
+Plug 'Valloric/YouCompleteMe'
 "Plug 'ctrlpvim/ctrlp.vim'
 Plug 'mhinz/vim-signify'
 Plug 'pangloss/vim-javascript'
