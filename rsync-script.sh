@@ -70,6 +70,7 @@ copy_vim_configs () {
   sessions_vim_dir=$dest_vim_dir/sessions
   examples_vim_dir=$dest_vim_dir/examples
   ftplugin_vim_dir=$dest_vim_dir/ftplugin
+  ultisnips_vim_dir=$dest_vim_dir/UltiSnips
 
   #check dir existing
   if [ ! -d "$dest_vim_dir" ]; then
@@ -83,6 +84,9 @@ copy_vim_configs () {
   fi
   if [ ! -d "$ftplugin_vim_dir" ]; then
     mkdir $ftplugin_vim_dir
+  fi
+  if [ ! -d "$ultisnips_vim_dir" ]; then
+    mkdir $ultisnips_vim_dir
   fi
 
   #cleaning
@@ -99,6 +103,7 @@ copy_vim_configs () {
     "$source_vim_dir/autoload"
     "$source_vim_dir/examples"
     "$source_vim_dir/ftplugin"
+    "$source_vim_dir/UltiSnips"
     "$source_vim_dir/vimrc"
     "$source_vim_dir/viminfo"
     "$dest_vim_dir"
