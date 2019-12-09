@@ -60,5 +60,6 @@ set laststatus=2
 
 "Snippets plugin :help UltiSnips
 let g:UltiSnipsExpandTrigger=",,"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+let g:UltiSnipsEditSplit="horizontal"
