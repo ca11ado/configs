@@ -1,3 +1,40 @@
-snippet timeout "Timeout"
-setTimeout(() => $1, $2);
+global !p
+import re
+def camelToKebab(name):
+	s1 = re.sub('(.)([A-Z][a-z]+)', r'\1-\2', name)
+	return re.sub('([a-z0-9])([A-Z])', r'\1-\2', s1).lower()
+endglobal
+
+snippet limp "import lamoda vue component" b
+import $1 from '`!p snip.rv="blocks/" + camelToKebab(t[1]) + "/" + camelToKebab(t[1]) + ".vue"`'
+endsnippet
+
+snippet vuetempl "Vue template"
+<template>
+	<div :class="$style.root">
+		$1
+	</div>
+</template>
+
+<script>
+$2
+
+export default {
+	components: {
+	},
+	props: {
+	},
+	data() {
+		return {};
+	},
+	computed: {
+	},
+};
+</script>
+
+<style module>
+	.root {
+		display: block;
+	}
+</style>
 endsnippet
