@@ -63,3 +63,6 @@ let g:UltiSnipsExpandTrigger=",,"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 let g:UltiSnipsEditSplit="horizontal"
+
+"Autogenerate Ctags after file save
+au BufWritePost *.c,*.cpp,*.h silent! !ctags -R &
