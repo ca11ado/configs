@@ -59,7 +59,7 @@ set listchars=eol:$,tab:▸·,trail:~,extends:>,precedes:<
 set laststatus=2
 
 "Snippets plugin :help UltiSnips
-let g:UltiSnipsExpandTrigger=",,"
+let g:UltiSnipsExpandTrigger="\\"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 let g:UltiSnipsEditSplit="horizontal"
