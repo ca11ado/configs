@@ -105,6 +105,8 @@ command! -bang Marks
 nnoremap <leader>rc :%s/\<<c-r><c-w>\>//gc<left><left><left>
 "replace the word from register
 nnoremap <leader>ry :%s/<c-r>0/<c-r>0/gc<left><left><left>
+"reptace current word under cursor
+map <leader>rw ebye,ry
 
 set tags+=.git/tags
 nnoremap <leader>ct :!ctags -Rf .git/tags --tag-relative --exclude=.git --exclude=pkg --exclude=node_modules --exclude=build --exclude=vendor<cr><cr>
