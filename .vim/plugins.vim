@@ -2,7 +2,7 @@
 " " Configuration goes in the appropriate modules/plugins/*.vim file.
 " " So configuration for tmux.vim would go in modules/plugins/tmux.vim.vim
 
-Plug 'Lokaltog/vim-easymotion'
+"Plug 'Lokaltog/vim-easymotion'
 Plug 'Raimondi/delimitMate'
 Plug 'Valloric/YouCompleteMe'
 "Plug 'ctrlpvim/ctrlp.vim'
