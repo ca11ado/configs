@@ -39,6 +39,10 @@ map <leader>c :%w !LANG=en_US.UTF-8 pbcopy<cr>
 map <leader>z <C-z>
 "map <leader>l :!clear; and eslint %<CR>
 
+"
+nnoremap <space>j 5j
+nnoremap <space>k 5k
+
 "move lines around
 nnoremap <leader>k :m-2<cr>==
 nnoremap <leader>j :m+<cr>==
