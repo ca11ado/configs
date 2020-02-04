@@ -37,6 +37,6 @@ function! ToggleVisualHighlight()
   endif
 endfunction
 
-:call ToggleVisualHighlight()
+":call ToggleVisualHighlight()
 
 
