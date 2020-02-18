@@ -9,7 +9,7 @@
 	excludesfile = ~/.gitignore_global
 [alias]
   s = status
-  b = branch --sort=-committerdate
+  b = branch --sort=committerdate
   ch = checkout
 	ane = !git add . && git commit --amend --no-edit
   prm = pull --rebase origin master
