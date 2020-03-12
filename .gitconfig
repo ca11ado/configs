@@ -40,20 +40,18 @@
   pp-to-go = log --since 10.07.2019 -- templates/jinja/desktop/global/product templates/jinja/desktop/global/blocks/sizes.html templates/jinja/desktop/global/blocks/reviews-and-questions.html
 	alias = ! git config --get-regexp ^alias\\. | sed -e s/^alias\\.// -e s/\\ /\\ =\\ /
   authors = ! git log --format='%aN' | sort -u
-[diff]
-	tool = vimdiff
-[diff "tool"]
-  prompt = false
 [push]
   default = simple
-[merge]
-	tool = diffconflicts
-[mergetool]
-	keepBackup = false
-[mergetool "diffconflicts"]
-	cmd = diffconflicts nvim $BASE $LOCAL $REMOTE $MERGED
-	trustExitCode = true
 [url "ssh://git@stash.lamoda.ru:7999"]
 	insteadOf = https://stash.lamoda.ru/scm
 [log]
 	mailmap = true
+# define command which will be used when "nvim" is set as a merge tool
+[mergetool "nvim"]
+  cmd = nvim -f -c \"Gdiffsplit!\" \"$MERGED\"
+# set "nvim" as tool for merging
+[merge]
+  tool = nvim
+# automatically launch merge tool without displaying a prompt
+[mergetool]
+  prompt = false
