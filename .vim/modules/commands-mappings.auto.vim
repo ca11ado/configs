@@ -157,3 +157,6 @@ nnoremap <expr> N 'nN'[v:searchforward]
 
 "remove space symbol and add new line
 nnoremap <leader>a<space> xi<CR><ESC>
+
+"JAVASCRIPT
+map ,dc :g/console.log/d<cr>
