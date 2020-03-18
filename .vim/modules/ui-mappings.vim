@@ -12,6 +12,9 @@ nmap <leader>gb :Gblame<CR>
 nmap <leader>gl :0Glog<CR>
 nmap <leader>gd :Gdiff<CR>
 
+"only one shown buffer
+nnoremap <leader>o <C-W>o
+
 "search highlight off
 nmap <leader>hs :noh<CR>
 "highlight world under cursor in current buffer
