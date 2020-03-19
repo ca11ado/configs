@@ -5,8 +5,16 @@ def camelToKebab(name):
 	return re.sub('([a-z0-9])([A-Z])', r'\1-\2', s1).lower()
 endglobal
 
-snippet limp "import lamoda vue component" b
+snippet ilm "import lamoda vue component" b
 import $1 from '`!p snip.rv="blocks/" + camelToKebab(t[1]) + "/" + camelToKebab(t[1]) + ".vue"`';
+endsnippet
+
+snippet ild "import lodash" b
+import $1 from 'lodash/$1';
+endsnippet
+
+snippet ildp "import lodash" b
+import $1 from 'lodash/fp/$1';
 endsnippet
 
 snippet vuetempl "Vue template"
