@@ -13,8 +13,7 @@ let g:javascript_conceal_arrow_function       = "⇒"
 let g:javascript_conceal_noarg_arrow_function = "🞅"
 let g:javascript_conceal_underscore_arrow_function = "🞅"
 
-
-map :YcmCompleter GoTo ,yd
-map :YcmCompleter RefactorRename ,yr
-map :YcmCompleter OrganizeImports ,yi
+map ,yd :YcmCompleter GoTo
+map ,yr :YcmCompleter RefactorRename
+map ,yi :YcmCompleter OrganizeImports
 
