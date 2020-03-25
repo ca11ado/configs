@@ -26,7 +26,10 @@ let g:airline#extensions#default#section_truncate_width = {
 
 " [Tags] Command to generate tags file
 let g:fzf_tags_command = 'ctags -Rf .git/tags --tag-relative --exclude=.git --exclude=pkg --exclude=node_modules --exclude=build --exclude=vendor'
+" Regexp
 let $FZF_DEFAULT_COMMAND = 'Ag -l --nogroup  --nocolor -g ""'
+" Literal
+"let $FZF_DEFAULT_COMMAND = 'Ag -l --nogroup  --nocolor -Q ""'
 
 "plugin fzf
 set rtp+=/usr/local/opt/fzf
