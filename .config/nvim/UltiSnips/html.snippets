@@ -1,0 +1,9 @@
+global !p
+import re
+def cutUntilSpace(str):
+	return re.sub('^(\S+)\s.*', r'\1', str)
+endglobal
+
+snippet tag "tag" b
+<$1></`!p snip.rv=cutUntilSpace(t[1])`>
+endsnippet
