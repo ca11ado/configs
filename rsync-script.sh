@@ -111,6 +111,11 @@ copy_bash_configs () {
   rsync "${ARGS[@]}"
 }
 
+copy_zsh_configs () {
+  ARGS=("-avz" "$source_path/.zshrc" "$dest_path/")
+  rsync "${ARGS[@]}"
+}
+
 interactive_mode () {
   echo -n "Copy fish config (y/n)? "
   read answer
@@ -225,6 +230,7 @@ if [ -n "$CONFIGS" ]; then
     copy_nvim_configs
     copy_ctags_configs
     copy_tmux_configs
+    copy_zsh_configs
   fi
   if [[ $CONFIGS =~ 'v' ]]; then
     copy_vim_configs
@@ -243,6 +249,9 @@ if [ -n "$CONFIGS" ]; then
     copy_ctags_configs
   fi
   if [[ $CONFIGS =~ 't' ]]; then
+    copy_tmux_configs
+  fi
+  if [[ $CONFIGS =~ 'z' ]]; then
     copy_tmux_configs
   fi
 fi
