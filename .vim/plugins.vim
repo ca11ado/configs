@@ -3,25 +3,46 @@
 " " So configuration for tmux.vim would go in modules/plugins/tmux.vim.vim
 
 "Plug 'Lokaltog/vim-easymotion'
+
+" automatic closing of quotes, parenthesis, brackets, etc
 Plug 'Raimondi/delimitMate'
+
+" autocompletion
 Plug 'Valloric/YouCompleteMe'
-"Plug 'ctrlpvim/ctrlp.vim'
+
+" indicate added, modified and removed lines in a file 
 Plug 'mhinz/vim-signify'
+
+" provides syntax highlighting and improved indentation
 Plug 'pangloss/vim-javascript'
-"Plug 'mileszs/ack.vim'
+
+" Vim syntax highlighting
 Plug 'posva/vim-vue'
+
+" color schemes
 Plug 'rafi/awesome-vim-colorschemes'
+
+" vcs
 Plug 'tpope/vim-fugitive'
+
+" file manager
 Plug 'scrooloose/nerdtree'
-"Plug 'gcmt/taboo.vim'
+
+" search
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+
+" highlights the XML/HTML tags that enclose your cursor location
 Plug 'valloric/matchtagalways'
+
+" eslint
 Plug 'dense-analysis/ale'
+
+" golang
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+
+" Lean & mean status/tabline for vim that's light as air.
 Plug 'vim-airline/vim-airline'
-"highlight colors
-"Plug 'lilydjwg/colorizer'
 
 "Snippets
 Plug 'sirver/ultisnips'
