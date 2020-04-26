@@ -19,6 +19,7 @@
 "color deus
 color dracula
 hi CursorLine cterm=NONE ctermbg=000
+hi CursorLineNr cterm=bold ctermbg=grey ctermfg=yellow
 hi IncSearch ctermfg=17 ctermbg=94 cterm=none guifg=#282a36 guibg=#ffb86c gui=none
 "color flattened_dark
 "color flattened_light
