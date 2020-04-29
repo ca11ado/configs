@@ -15,6 +15,9 @@ nmap <leader>gd :Gdiff<CR>
 "only one shown buffer
 nnoremap <leader>o <C-W>o
 
+" diff highlight off/on (todo :windo diffthis)
+nmap <leader>hd :diffoff
+
 "search highlight off
 nmap <leader>hs :noh<CR>
 "highlight world under cursor in current buffer
