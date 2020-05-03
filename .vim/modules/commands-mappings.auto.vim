@@ -113,7 +113,7 @@ nnoremap <leader>ry :%s/<c-r>0/<c-r>0/gc<left><left><left>
 nnoremap <leader>rw ebye:%s/\<<c-r>0\>/<c-r>0/gc<left><left><left>
 
 set tags+=.git/tags
-nnoremap <leader>ct :!ctags -Rf .git/tags --tag-relative --exclude=.git --exclude=pkg --exclude=node_modules --exclude=build --exclude=vendor<cr><cr>
+nnoremap <leader>ct :!ctags -Rf .git/tags --tag-relative --exclude=.git --exclude=pkg --exclude=node_modules --exclude=build --exclude=vendor --exclude=static/django<cr><cr>
 
 "Tab to switch to next open argument
 "nnoremap <Tab> :bn<cr>
