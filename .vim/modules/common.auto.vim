@@ -1,3 +1,8 @@
+"from presentation (90% of plugins)
+set nocompatible
+filetype plugin on
+set path+=**
+
 set number
 set tabstop=2
 set shiftwidth=2
