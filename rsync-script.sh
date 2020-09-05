@@ -218,6 +218,12 @@ if [ -n "$INSTALL" ]; then
   else
     echo_error "some error while installing diffconflicts"
   fi
+
+  if install_lsp; then
+    echo_success "lsp was installed successefully"
+  else
+    echo_error "ERORR: when installing lsp"
+  fi
 fi
 
 if [ -n "$CONFIGS" ]; then

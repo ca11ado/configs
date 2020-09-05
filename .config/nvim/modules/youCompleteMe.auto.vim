@@ -17,8 +17,9 @@ map ,yd :YcmCompleter GoTo
 map ,yr :YcmCompleter RefactorRename 
 map ,yi :YcmCompleter OrganizeImports
 
-let g:ycm_language_server = [ {
-    \ 'name': 'vue',
-    \ 'filetypes': [ 'vue' ],
-    \ 'cmdline': [ 'vls'  ]
-    \ } ]
+"let s:lsp = '$HOME/.config/lsp'
+let g:ycm_language_server = [
+  \   { 'name': 'vue',
+  \     'filetypes': [ 'vue' ], 
+  \     'cmdline': [ expand( '$HOME/.config/lsp/vue/node_modules/.bin/vls' ) ]
+  \   } ]

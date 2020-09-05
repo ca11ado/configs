@@ -5,6 +5,7 @@ SOURCE_DIFFCONFLICTS_DIR=${HOME}/.config/git
 DEST_DIFFCONFLICTS_DIR=/usr/local/bin
 DEST_DIFFCONFLICTS_LINK_DIR=/usr/local/bin
 DIFFCONFLICTS_FILE_NAME=diffconflicts
+LSP_DIR=${HOME}/.config/lsp
 
 check_os () {
   unameOut="$(uname -s)"
@@ -13,6 +14,17 @@ check_os () {
     Linux*)   OS=Linux;;
     *)        OS=Linux
   esac
+}
+
+# for YcmCompleter for vue (or other lang)
+install_lsp () {
+
+  if ! [ -d $DEST_DIFFCONFLICTS_DIR ]; then
+    git clone https://github.com/ycm-core/lsp-examples.git $LSP_DIR \
+    && cd $LSP_DIR/vue/ && ./install.py
+  else
+    echo skipping LSP: folder exist
+  fi
 }
 
 install_ctags () {
