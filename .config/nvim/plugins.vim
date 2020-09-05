@@ -20,7 +20,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'posva/vim-vue'
 
 " color schemes
-Plug 'rafi/awesome-vim-colorschemes'
+Plug 'dracula/vim', { 'as': 'dracula' }
 
 " vcs
 Plug 'tpope/vim-fugitive'
