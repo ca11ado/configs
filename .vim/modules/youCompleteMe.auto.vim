@@ -13,9 +13,9 @@ let g:javascript_conceal_arrow_function       = "⇒"
 let g:javascript_conceal_noarg_arrow_function = "🞅"
 let g:javascript_conceal_underscore_arrow_function = "🞅"
 
-map ,yd :YcmCompleter GoTo
-map ,yr :YcmCompleter RefactorRename 
-map ,yi :YcmCompleter OrganizeImports
+map ,yd :YcmCompleter GoTo<cr>
+map ,yr :YcmCompleter RefactorRename<cr>
+map ,yi :YcmCompleter OrganizeImports<cr>
 
 let g:ycm_language_server = [ {
     \ 'name': 'vue',
