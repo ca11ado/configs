@@ -13,13 +13,13 @@ let g:javascript_conceal_arrow_function       = "⇒"
 let g:javascript_conceal_noarg_arrow_function = "🞅"
 let g:javascript_conceal_underscore_arrow_function = "🞅"
 
-map ,yd :YcmCompleter GoTo
-map ,yr :YcmCompleter RefactorRename 
-map ,yi :YcmCompleter OrganizeImports
+map ,yd :YcmCompleter GoTo<CR>
+map ,yr :YcmCompleter RefactorRename<CR>
+map ,yi :YcmCompleter OrganizeImports<CR>
 
 "let s:lsp = '$HOME/.config/lsp'
 let g:ycm_language_server = [
   \   { 'name': 'vue',
   \     'filetypes': [ 'vue' ], 
-  \     'cmdline': [ expand( '$HOME/.config/lsp/vue/node_modules/.bin/vls' ) ]
+  \     'cmdline': [ 'vls' ]
   \   } ]
