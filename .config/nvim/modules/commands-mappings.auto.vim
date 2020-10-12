@@ -129,7 +129,7 @@ nnoremap <leader><SPACE> <c-^>
 "switch to the next buffer
 nnoremap <leader>bn :n<cr>
 "switch to the previous buffer
-nnoremap <leader>:bp :p<cr>
+nnoremap <leader>bp :p<cr>
 
 
 "command mode
