@@ -161,3 +161,6 @@ nnoremap <leader>a<space> xi<CR><ESC>
 
 "JAVASCRIPT
 map ,dc :g/console.log/d<cr>
+
+"Populate args with filenames from commit
+nnoremap <leader>af :argadd `Git diff-tree -r --no-commit-id --name-only `<left> 
