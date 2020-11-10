@@ -58,6 +58,7 @@ map <leader>spe :set spell spelllang=en
 map <leader>nn :NERDTreeVCS<CR>
 map <leader>nd :NERDTree<CR>
 map <leader>nf :NERDTreeFind<CR>
+map <leader>nc :NERDTreeToggle<CR>
 
 "sessions
 let g:sessions_dir = '~/.vim/sessions'
