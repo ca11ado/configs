@@ -67,6 +67,8 @@ exec 'nnoremap <Leader>sr :so ' . g:sessions_dir. '/*.vim<C-D><BS><BS><BS><BS><B
 
 "search word in file and show matching count
 nnoremap / :%s///ng<Left><Left><Left><Left>
+"search exact word
+nnoremap <leader>/ :%s/\c\<\>//ng<Left><Left><Left><Left><Left><Left>
 "search project files
 nnoremap <leader>ff :FZF<cr>
 "search project files by lines of code
