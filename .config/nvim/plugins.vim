@@ -47,3 +47,6 @@ Plug 'vim-airline/vim-airline'
 "Snippets
 Plug 'sirver/ultisnips'
 Plug 'honza/vim-snippets'
+
+"Cheat.sh
+Plug 'dbeniamine/cheat.sh-vim'
