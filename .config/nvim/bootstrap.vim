@@ -3,6 +3,7 @@ set nocompatible
 
 "manual sourcing
 execute 'source ~/.config/nvim/modules/ui-mappings.vim'
+execute 'source ~/.config/nvim/modules/vimsence.vim'
 
 " Wraps paths to make them relative to this directory.
 function! Dot(path)

@@ -50,3 +50,6 @@ Plug 'honza/vim-snippets'
 
 "Cheat.sh
 Plug 'dbeniamine/cheat.sh-vim'
+
+"discord
+Plug 'hugolgst/vimsence'
