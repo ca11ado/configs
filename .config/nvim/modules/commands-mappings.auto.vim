@@ -35,7 +35,7 @@ function! WinOpen(key)
   endif
 endfunction
 
-map <leader>c :%w !LANG=en_US.UTF-8 pbcopy<cr>
+"map <leader>c :%w !LANG=en_US.UTF-8 pbcopy<cr>
 "map <leader>b :!browser-sync start --no-notify --no-ui --server --files % > /dev/null 2>&1 &<CR>
 map <leader>z <C-z>
 "map <leader>l :!clear; and eslint %<CR>
@@ -167,3 +167,9 @@ map ,dc :g/console.log/d<cr>
 
 "Populate args with filenames from commit
 nnoremap <leader>af :argadd `Git diff-tree -r --no-commit-id --name-only `<left> 
+
+"COPY
+" copy file name
+nnoremap <leader>cf :let @+ = expand("%:t")<CR>
+" copy file path
+nnoremap <leader>cp :let @+ = expand("%")<CR>
