@@ -94,7 +94,7 @@ nnoremap <leader>.. *:
 nnoremap <leader>.<leader> *NN
 
 "start a search query by pressing \
-nnoremap \  :Ag!<space>
+nnoremap \  :Ag!<space>''<left>
 "search for word under cursor by pressing |
 nnoremap \| :Ag! <C-R><C-W><cr>
 "if using Ag! it will be opened in full screen with preview
@@ -119,13 +119,13 @@ nnoremap <leader>rw ebye:%s/\<<c-r>0\>/<c-r>0/gc<left><left><left>
 set tags+=.git/tags
 nnoremap <leader>ct :!ctags -Rf .git/tags --tag-relative --exclude=.git --exclude=pkg --exclude=node_modules --exclude=build --exclude=vendor --exclude=static/django<cr><cr>
 
-"Tab to switch to next open argument
-"nnoremap <Tab> :bn<cr>
+"TABS
 nnoremap <leader>tn :bn<CR>
-"Shift + Tab to switch to previous open argument
 nnoremap <leader>tp :bp<CR>
-"nnoremap <S-Tab> :bp<cr>
-"nnoremap <leader><Tab> <c-^>
+"THREE-TABS technice
+nnoremap <leader>gf :tabfirst<CR>
+nnoremap <leader>gl :tablast<CR>
+nnoremap <leader>gm :2gt<CR>
 
 "leader key twice to cycle between last two open buffers or arguments
 nnoremap <leader><SPACE> <c-^>
