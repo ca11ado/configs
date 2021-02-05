@@ -125,7 +125,7 @@ nnoremap <leader>tp :bp<CR>
 "THREE-TABS technice
 nnoremap <leader>gf :tabfirst<CR>
 nnoremap <leader>gl :tablast<CR>
-nnoremap <leader>gm :2gt<CR>
+nnoremap <leader>gm 2gt<CR>
 
 "leader key twice to cycle between last two open buffers or arguments
 nnoremap <leader><SPACE> <c-^>
