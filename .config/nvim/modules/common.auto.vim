@@ -8,6 +8,7 @@ set tabstop=2
 set shiftwidth=2
 set expandtab "use spaces instead of tabs"
 set splitright
+set splitbelow
 set nowrap
 set showtabline=2
 set hidden "allow move from unsaved buffer without error
