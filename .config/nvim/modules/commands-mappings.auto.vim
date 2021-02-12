@@ -49,6 +49,8 @@ nnoremap <leader>j :m+<cr>==
 xnoremap <leader>k :m-2<cr>gv=gv
 xnoremap <leader>j :m'>+<cr>gv=gv
 
+nnoremap <leader><leader> ,
+
 map <leader>sps :set spell spelllang=ru,en
 map <leader>spr :set spell spelllang=ru 
 map <leader>spe :set spell spelllang=en 
