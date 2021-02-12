@@ -4,7 +4,6 @@ imap jk <Esc>
 noremap j gj
 noremap k gk
 map <leader>w :w<CR>
-map <leader><leader> :w<CR>
 map <leader>qq :q<CR>
 map <leader>qw :x<CR>
 
