@@ -1,0 +1,18 @@
+
+[
+  // See the onivim documentation for details on the format:
+  // https://onivim.github.io/docs/configuration/key-bindings
+  { "key": "jk", "command": "vim.esc", when: "insertMode" },
+  { "key": "<Leader>w", "command": ":write", when: "normalMode" },
+  { "key": "<Leader>ej", "command": "view.splitHorizontal", when: "normalMode" },
+  { "key": "<Leader>el", "command": "view.splitVertical", when: "normalMode" },
+
+  // moving around
+  { "key": "<C-h>", "command": "window.moveLeft", when: "normalMode" },
+  { "key": "<C-l>", "command": "window.moveRight", when: "normalMode" },
+  { "key": "<C-k>", "command": "window.moveUp", when: "normalMode" },
+  { "key": "<C-j>", "command": "window.moveDown", when: "normalMode" },
+
+  // files
+  { "key": "<Leader>ff", "command": "window.moveDown", when: "normalMode" }
+]
