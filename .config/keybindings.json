@@ -1,0 +1,20 @@
+
+[
+  // See the onivim documentation for details on the format:
+  // https://onivim.github.io/docs/configuration/key-bindings
+  // Add key bindings here, for example:
+  // { "key": "<TAB>", "command": "workbench.action.quickOpen", when: "editorTextFocus" },
+  { "key": "jk", "command": "vim.esc", when: "insertMode" },
+  { "key": ",,", "command": ":write", when: "normalMode" },
+  { "key": ",ej", "command": "view.splitHorizontal", when: "normalMode" },
+  { "key": ",el", "command": "view.splitVertical", when: "normalMode" },
+
+  // moving around
+  { "key": "<C-h>", "command": "window.moveLeft", when: "normalMode" },
+  { "key": "<C-l>", "command": "window.moveRight", when: "normalMode" },
+  { "key": "<C-k>", "command": "window.moveUp", when: "normalMode" },
+  { "key": "<C-j>", "command": "window.moveDown", when: "normalMode" },
+
+  // files
+  { "key": ",ff", "command": "window.moveDown", when: "normalMode" }
+]
