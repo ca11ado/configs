@@ -16,7 +16,7 @@ let g:javascript_conceal_underscore_arrow_function = "🞅"
 let g:ycm_autoclose_preview_window_after_insertion = 1
 
 map ,yd :YcmCompleter GoTo<CR>
-map ,yr :YcmCompleter RefactorRename<CR>
+map ,yr :YcmCompleter RefactorRename
 map ,yi :YcmCompleter OrganizeImports<CR>
 
 "let g:ycm_language_server = [

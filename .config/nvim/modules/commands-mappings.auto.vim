@@ -43,6 +43,10 @@ map <leader>z <C-z>
 nnoremap <space>j 5j
 nnoremap <space>k 5k
 
+"paste yanked to new below string
+nnoremap <leader>p :put<CR>
+nnoremap <leader>P k:put<CR>
+
 "move lines around
 nnoremap <leader>k :m-2<cr>==
 nnoremap <leader>j :m+<cr>==

@@ -15,3 +15,28 @@ try {
 	$2
 }
 endsnippet
+
+snippet testd "jest describe block"
+describe('$1', () => {
+	test('$2', () => {
+		expect(true).toBe(false);
+	});
+});
+endsnippet
+
+snippet testt "jest test block"
+test('$1', () => {
+	expect(true).toBe(false);
+});
+endsnippet
+
+snippet teste "jest test each block"
+test.each([
+	$1
+])(
+	'given %o should return %o',
+	() => {
+		expect().toBe();
+	},
+);
+endsnippet
