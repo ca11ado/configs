@@ -8,7 +8,8 @@
 Plug 'Raimondi/delimitMate'
 
 " autocompletion
-Plug 'Valloric/YouCompleteMe'
+" Plug 'Valloric/YouCompleteMe'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " indicate added, modified and removed lines in a file 
 Plug 'mhinz/vim-signify'

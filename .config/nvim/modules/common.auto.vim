@@ -16,6 +16,20 @@ set hidden "allow move from unsaved buffer without error
 set so=8
 set bg=dark
 set cursorline
+set nobackup
+set nowritebackup
+set cmdheight=2
+set updatetime=300
+set shortmess+=c
+
+" Always show the signcolumn, otherwise it would shift the text each time
+" diagnostics appear/become resolved.
+if has("patch-8.1.1564")
+  " Recently vim can merge signcolumn and number column into one
+  set signcolumn=number
+else
+  set signcolumn=yes
+endif
 
 "plugin airline 
 "let g:airline#extensions#tabline#left_sep = '> '
