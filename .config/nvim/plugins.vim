@@ -6,6 +6,7 @@
 
 " automatic closing of quotes, parenthesis, brackets, etc
 Plug 'Raimondi/delimitMate'
+" Plug 'jiangmiao/auto-pairs'
 
 " autocompletion
 " Plug 'Valloric/YouCompleteMe'
