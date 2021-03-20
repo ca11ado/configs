@@ -1,1 +1,1 @@
-let g:delimitMate_eol_marker = ","
+" let g:delimitMate_eol_marker = ","
