@@ -1,5 +1,7 @@
 let mapleader=','
 
+command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
+
 " Use tab for trigger completion with characters ahead and navigate.
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
