@@ -31,7 +31,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdtree'
 
 " search
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
 " highlights the XML/HTML tags that enclose your cursor location
