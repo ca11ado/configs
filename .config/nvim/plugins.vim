@@ -16,10 +16,14 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'mhinz/vim-signify'
 
 " provides syntax highlighting and improved indentation
-Plug 'pangloss/vim-javascript'
+" Plug 'pangloss/vim-javascript'
+
+" typescript and react syntax highlight
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
 
 " Vim syntax highlighting
-Plug 'posva/vim-vue'
+" Plug 'posva/vim-vue'
 
 " color schemes
 Plug 'dracula/vim', { 'as': 'dracula' }
@@ -54,4 +58,4 @@ Plug 'honza/vim-snippets'
 Plug 'dbeniamine/cheat.sh-vim'
 
 "discord
-Plug 'hugolgst/vimsence'
+" Plug 'hugolgst/vimsence'
