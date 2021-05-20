@@ -4,11 +4,12 @@
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/anton.himtsov/.oh-my-zsh"
 
+POWERLEVEL9K_MODE='awesome-fontconfig'
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="powerlevel9k/powerlevel9k"
+ZSH_THEME="robbyrussell"
 
 # POWERLINE
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir rbenv vcs)
@@ -131,3 +132,6 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 # Autosuggestions
 AUTOSUGGESTION_HIGHLIGHT_COLOR='fg=250'
 #ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=250'
+
+# Proper python installation
+export PATH="/usr/local/opt/python/libexec/bin:$PATH"
