@@ -110,7 +110,7 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 ### START GLOBAL VARIABLES
 export PATH="${PATH:+${PATH}:}./node_modules/.bin"
-export FZF_DEFAULT_COMMAND='Ag -l --nogroup  --nocolor --hidden -g ""'
+export FZF_DEFAULT_COMMAND='ag -l --nogroup  --nocolor --hidden --exclude node_modules -g ""'
 export LANG=en_US.UTF-8
 export TMUX_GITBAR_DIR=$HOME/.tmux/gitbar
 
