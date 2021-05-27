@@ -135,3 +135,7 @@ AUTOSUGGESTION_HIGHLIGHT_COLOR='fg=250'
 
 # Proper python installation
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+
+# Google Cloud SDK
+source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
+source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc
