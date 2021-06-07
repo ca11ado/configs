@@ -110,7 +110,7 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 ### START GLOBAL VARIABLES
 export PATH="${PATH:+${PATH}:}./node_modules/.bin"
-export FZF_DEFAULT_COMMAND='ag -l --nogroup  --nocolor --hidden --exclude node_modules -g ""'
+export FZF_DEFAULT_COMMAND='ag -l --nogroup  --nocolor --hidden --ignore-dir node_modules -g ""'
 export LANG=en_US.UTF-8
 export TMUX_GITBAR_DIR=$HOME/.tmux/gitbar
 
@@ -128,6 +128,8 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 #FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# ZSH echo current directory name in badge
+printf "\e]1337;SetBadgeFormat=%s\a" $(echo -n "${PWD##*/}  " | base64)
 
 # Autosuggestions
 AUTOSUGGESTION_HIGHLIGHT_COLOR='fg=250'
