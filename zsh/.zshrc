@@ -129,7 +129,7 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 #FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 # ZSH echo current directory name in badge
-printf "\e]1337;SetBadgeFormat=%s\a" $(echo -n "${PWD##*/}  " | base64)
+# printf "\e]1337;SetBadgeFormat=%s\a" $(echo -n "${PWD##*/}  " | base64)
 
 # Autosuggestions
 AUTOSUGGESTION_HIGHLIGHT_COLOR='fg=250'
@@ -141,3 +141,17 @@ export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 # Google Cloud SDK
 source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
 source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc
+
+function iterm2_print_user_vars() {
+  iterm2_set_user_var badge $(dir_badges)
+}
+
+function dir_badges() {
+    while read directory badge || [[ -n "$directory" ]]
+    do
+        if [[ "$PWD" == $directory* ]]; then
+            echo $badge
+            break
+        fi
+    done < ~/.badges
+}
