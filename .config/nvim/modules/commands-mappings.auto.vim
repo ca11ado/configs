@@ -178,3 +178,6 @@ nnoremap <leader>af :argadd `Git diff-tree -r --no-commit-id --name-only `<left>
 nnoremap <leader>cf :let @+ = expand("%:t")<CR>
 " copy file path
 nnoremap <leader>cp :let @+ = expand("%")<CR>
+
+"Prettier
+nnoremap <leader>c<leader> :Prettier<CR>
