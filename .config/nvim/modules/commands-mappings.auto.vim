@@ -99,7 +99,7 @@ nnoremap <leader>.. *:
 nnoremap <leader>.<leader> *NN
 
 "start a search query by pressing \
-nnoremap \  :Ag!<space>''<left>
+nnoremap \  :Ag! --ignore-dir node_modules<space>''<left>
 "search for word under cursor by pressing |
 nnoremap \| :Ag! <C-R><C-W><cr>
 "if using Ag! it will be opened in full screen with preview
